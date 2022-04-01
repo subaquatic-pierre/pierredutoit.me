@@ -99,16 +99,17 @@ const Hero = (): JSX.Element => {
         <Container>
           <Box maxWidth={{ xs: 1, sm: '50%' }}>
             <Typography
-              variant="h2"
+              variant="h3"
               color="text.primary"
               gutterBottom
               sx={{
                 fontWeight: 700,
               }}
             >
-              Turn your ideas
+              Hey, my name is
               <br />
-              into{' '}
+              Pierre 👋, I&apos;m a
+              <br />
               <Typography
                 color={'primary'}
                 component={'span'}
@@ -121,7 +122,13 @@ const Hero = (): JSX.Element => {
                 }}
               >
                 <Typed
-                  strings={['startup.', 'future.', 'success.']}
+                  strings={[
+                    'software engineer.',
+                    'cloud architect.',
+                    'react developer.',
+                    'Python artist.',
+                    'blockchain enthusiast.',
+                  ]}
                   typeSpeed={80}
                   loop={true}
                 />
@@ -133,8 +140,9 @@ const Hero = (): JSX.Element => {
               color="text.secondary"
               sx={{ fontWeight: 400 }}
             >
-              theFront will make your product look modern and professional while
-              saving you precious time.
+              I am a self-taught software engineer with a passion for anything
+              web. The internet is the future and its technologies are exciting
+              to master
             </Typography>
             <Box
               display="flex"
@@ -148,9 +156,9 @@ const Hero = (): JSX.Element => {
                 color="primary"
                 size="large"
                 fullWidth={isMd ? false : true}
-                href={'/home'}
+                href={'/projects'}
               >
-                View pages
+                Projects
               </Button>
               <Box
                 marginTop={{ xs: 2, sm: 0 }}
@@ -159,13 +167,13 @@ const Hero = (): JSX.Element => {
               >
                 <Button
                   component={'a'}
-                  href={'/docs/introduction'}
+                  href={'/contact'}
                   variant="outlined"
                   color="primary"
                   size="large"
                   fullWidth={isMd ? false : true}
                 >
-                  Documentation
+                  Get in Touch
                 </Button>
               </Box>
             </Box>

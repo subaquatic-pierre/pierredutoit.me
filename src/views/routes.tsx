@@ -2,7 +2,6 @@ import React from 'react';
 
 import {
   IndexView,
-  Home as HomeView,
   NotFound as NotFoundView,
   Contact as ContactView,
   Projects as ProjectView,
@@ -20,10 +19,6 @@ const routes = [
   {
     path: '/contact',
     renderer: (params = {}): JSX.Element => <ContactView {...params} />,
-  },
-  {
-    path: '/home',
-    renderer: (params = {}): JSX.Element => <HomeView {...params} />,
   },
   {
     path: '/not-found',

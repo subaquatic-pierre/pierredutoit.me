@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { useLocation } from 'react-router-dom';
-import { alpha, useTheme } from '@mui/material/styles';
+import { useTheme } from '@mui/material/styles';
 
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -24,7 +24,7 @@ const NavItem = ({ item }: Props) => {
       sx={{
         '& a': {
           textDecoration: 'none',
-          color: mode === 'light' ? 'GrayText' : 'inherit',
+          color: mode === 'light' ? theme.palette.text.primary : 'inherit',
           '&::after': {
             content: '""',
             position: 'absolute',
