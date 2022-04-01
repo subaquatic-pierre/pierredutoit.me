@@ -22,7 +22,7 @@ const GetStarted = (): JSX.Element => {
           fontWeight: 700,
         }}
       >
-        Get started with theFront today
+        Get in touch with me
       </Typography>
       <Typography
         variant="h6"
@@ -31,8 +31,9 @@ const GetStarted = (): JSX.Element => {
         sx={{ fontWeight: 400 }}
         align={'center'}
       >
-        Build a beautiful, modern website with flexible, fully customizable,
-        atomic MUI components.
+        Drop me a message, I am always interested in collaborating on new
+        projects. I am an advocate of open source projects, anything web or
+        blockchain applications
       </Typography>
       <Box
         display="flex"
@@ -47,26 +48,10 @@ const GetStarted = (): JSX.Element => {
           color="primary"
           size="large"
           fullWidth={isMd ? false : true}
-          href={'/home'}
+          href={'/contact'}
         >
-          View pages
+          Get in touch
         </Button>
-        <Box
-          marginTop={{ xs: 2, sm: 0 }}
-          marginLeft={{ sm: 2 }}
-          width={{ xs: '100%', md: 'auto' }}
-        >
-          <Button
-            component={'a'}
-            href={'/docs/introduction'}
-            variant="outlined"
-            color="primary"
-            size="large"
-            fullWidth={isMd ? false : true}
-          >
-            Documentation
-          </Button>
-        </Box>
       </Box>
     </Box>
   );

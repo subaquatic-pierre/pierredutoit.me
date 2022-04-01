@@ -28,10 +28,7 @@ const validationSchema = yup.object({
     .trim()
     .email('Please enter a valid email address')
     .required('Email is required.'),
-  message: yup
-    .string()
-    .trim()
-    .required('Please specify your message'),
+  message: yup.string().trim().required('Please specify your message'),
 });
 
 const Contact = (): JSX.Element => {
@@ -63,12 +60,12 @@ const Contact = (): JSX.Element => {
           align={'center'}
           gutterBottom
         >
-          Contact us
+          Get in touch
         </Typography>
         <Typography color="text.secondary" align={'center'}>
-          Rather than worrying about switching offices every couple years, you
-          can instead stay in the same location and grow-up from your shared
-          coworking space to an office that takes up an entire floor.
+          If you are looking to collaborate on the next project, need advice to
+          cloud best practices or just want to have a chat, drop me a message
+          and I would be happy to reply
         </Typography>
       </Box>
       <Box>
@@ -150,48 +147,6 @@ const Contact = (): JSX.Element => {
               >
                 Submit
               </Button>
-            </Grid>
-            <Grid item container justifyContent={'center'} xs={12}>
-              <Typography color="text.secondary">
-                We'll get back to you in 1-2 business days.
-              </Typography>
-            </Grid>
-            <Grid item xs={12}>
-              <Divider />
-            </Grid>
-            <Grid item container justifyContent={'center'} xs={12}>
-              <Box>
-                <Typography component="p" variant="body2" align="left">
-                  By clicking on "submit" you agree to our{' '}
-                  <Box
-                    component="a"
-                    href=""
-                    color={theme.palette.text.primary}
-                    fontWeight={'700'}
-                  >
-                    Privacy Policy
-                  </Box>
-                  ,{' '}
-                  <Box
-                    component="a"
-                    href=""
-                    color={theme.palette.text.primary}
-                    fontWeight={'700'}
-                  >
-                    Data Policy
-                  </Box>{' '}
-                  and{' '}
-                  <Box
-                    component="a"
-                    href=""
-                    color={theme.palette.text.primary}
-                    fontWeight={'700'}
-                  >
-                    Cookie Policy
-                  </Box>
-                  .
-                </Typography>
-              </Box>
             </Grid>
           </Grid>
         </form>

@@ -8,71 +8,79 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { alpha, useTheme } from '@mui/material/styles';
 
 import Container from 'components/Container';
+import code1 from 'assets/code-1.jpg';
+import code2 from 'assets/code-2.jpg';
+import code3 from 'assets/code-3.jpg';
+import code4 from 'assets/code-4.jpg';
+import code5 from 'assets/code-5.jpg';
+import ballotonline from 'assets/ballotonline.png';
+import divesandybeachFlask from 'assets/divesandybeach-flask.png';
+import divesandybeach from 'assets/divesandybeach.png';
+import diveschedule from 'assets/diveschedule.png';
+import pizza from 'assets/pizza.png';
+import portfolio from 'assets/portfolio.png';
+import recipes from 'assets/recipes.png';
+import roombaBots from 'assets/roombaBots.png';
+import scubadivedubai from 'assets/scubadivedubai.png';
+import scubadivedubaiEcommerce from 'assets/scubadivedubaiEcommerce.png';
+import suretta from 'assets/suretta.png';
+import todoapp from 'assets/todoapp.png';
 
 const images = [
   {
     group: [
       {
-        cover:
-          'https://assets.maccarianagency.com/screenshots/the-front/img1.png',
-        coverDark:
-          'https://assets.maccarianagency.com/screenshots/the-front/img1--dark.png',
+        cover: ballotonline,
       },
       {
-        cover:
-          'https://assets.maccarianagency.com/screenshots/the-front/img4.png',
-        coverDark:
-          'https://assets.maccarianagency.com/screenshots/the-front/img4--dark.png',
+        cover: divesandybeachFlask,
+      },
+      {
+        cover: diveschedule,
       },
     ],
   },
   {
     group: [
       {
-        cover:
-          'https://assets.maccarianagency.com/screenshots/the-front/img13.png',
-        coverDark:
-          'https://assets.maccarianagency.com/screenshots/the-front/img13--dark.png',
+        cover: divesandybeach,
       },
       {
-        cover:
-          'https://assets.maccarianagency.com/screenshots/the-front/img10.png',
-        coverDark:
-          'https://assets.maccarianagency.com/screenshots/the-front/img10--dark.png',
+        cover: pizza,
       },
       {
-        cover:
-          'https://assets.maccarianagency.com/screenshots/the-front/img7.png',
-        coverDark:
-          'https://assets.maccarianagency.com/screenshots/the-front/img7--dark.png',
+        cover: portfolio,
+      },
+      {
+        cover: recipes,
+      },
+      {
+        cover: roombaBots,
       },
     ],
   },
   {
     group: [
       {
-        cover:
-          'https://assets.maccarianagency.com/screenshots/the-front/img6.png',
-        coverDark:
-          'https://assets.maccarianagency.com/screenshots/the-front/img6--dark.png',
+        cover: scubadivedubai,
       },
       {
-        cover:
-          'https://assets.maccarianagency.com/screenshots/the-front/img24.png',
-        coverDark:
-          'https://assets.maccarianagency.com/screenshots/the-front/img24--dark.png',
+        cover: scubadivedubaiEcommerce,
       },
       {
-        cover:
-          'https://assets.maccarianagency.com/screenshots/the-front/img17.png',
-        coverDark:
-          'https://assets.maccarianagency.com/screenshots/the-front/img17--dark.png',
+        cover: todoapp,
       },
       {
-        cover:
-          'https://assets.maccarianagency.com/screenshots/the-front/img12.png',
-        coverDark:
-          'https://assets.maccarianagency.com/screenshots/the-front/img12--dark.png',
+        cover: suretta,
+      },
+      {
+        cover: scubadivedubaiEcommerce,
+      },
+      {
+        cover: scubadivedubai,
+      },
+      {
+        cover: pizza,
       },
     ],
   },
@@ -125,8 +133,6 @@ const Hero = (): JSX.Element => {
                   strings={[
                     'software engineer.',
                     'cloud architect.',
-                    'react developer.',
-                    'Python artist.',
                     'blockchain enthusiast.',
                   ]}
                   typeSpeed={80}
@@ -142,7 +148,7 @@ const Hero = (): JSX.Element => {
             >
               I am a self-taught software engineer with a passion for anything
               web. The internet is the future and its technologies are exciting
-              to master
+              to explore, check out my latest projects or get in touch with me.
             </Typography>
             <Box
               display="flex"
@@ -207,9 +213,7 @@ const Hero = (): JSX.Element => {
                     <Box
                       component={LazyLoadImage}
                       effect="blur"
-                      src={
-                        theme.palette.mode === 'dark' ? g.coverDark : g.cover
-                      }
+                      src={g.cover}
                       height={1}
                       width={1}
                       maxWidth={320}

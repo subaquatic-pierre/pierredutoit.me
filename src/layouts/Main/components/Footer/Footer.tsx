@@ -6,6 +6,9 @@ import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import { useTheme } from '@mui/material/styles';
 
+import logoDark from 'assets/Logo-dark.png';
+import logoLight from 'assets/Logo-light.png';
+
 const Footer = (): JSX.Element => {
   const theme = useTheme();
   const { mode } = theme.palette;
@@ -29,11 +32,7 @@ const Footer = (): JSX.Element => {
           >
             <Box
               component={'img'}
-              src={
-                mode === 'light'
-                  ? 'https://assets.maccarianagency.com/the-front/logos/logo.svg'
-                  : 'https://assets.maccarianagency.com/the-front/logos/logo-negative.svg'
-              }
+              src={mode === 'light' ? logoDark : logoLight}
               height={1}
               width={1}
             />
@@ -83,18 +82,15 @@ const Footer = (): JSX.Element => {
           color="text.secondary"
           gutterBottom
         >
-          &copy; theFront. 2021, Maccarian. All rights reserved
+          All rights reserved.
         </Typography>
         <Typography
           align={'center'}
-          variant={'caption'}
+          variant={'subtitle2'}
           color="text.secondary"
-          component={'p'}
+          gutterBottom
         >
-          When you visit or interact with our sites, services or tools, we or
-          our authorised service providers may use cookies for storing
-          information to help provide you with a better, faster and safer
-          experience and for marketing purposes.
+          &copy; Pierre Du Toit - {new Date().getFullYear()}
         </Typography>
       </Grid>
     </Grid>
