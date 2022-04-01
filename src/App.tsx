@@ -1,23 +1,22 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import Routes from './Routes';
+import Page from './components/Page';
 
-function App() {
+import 'react-lazy-load-image-component/src/effects/blur.css';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import 'react-image-lightbox/style.css';
+import 'aos/dist/aos.css';
+
+const App = (): JSX.Element => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Page>
+      <BrowserRouter>
+        <Routes />
+      </BrowserRouter>
+    </Page>
   );
-}
+};
 
 export default App;
