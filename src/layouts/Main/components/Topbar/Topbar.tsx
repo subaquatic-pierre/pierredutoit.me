@@ -4,9 +4,10 @@ import Button from '@mui/material/Button';
 import { alpha, useTheme } from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
 
+import logoDark from 'assets/Logo-dark.png';
+import logoLight from 'assets/Logo-light.png';
 import NavItem from 'components/NavItem';
 import ThemeModeToggler from 'components/ThemeModeToggler';
-import { useLocation } from 'react-router-dom';
 
 interface Props {
   // eslint-disable-next-line @typescript-eslint/ban-types
@@ -22,7 +23,6 @@ const Topbar = ({
   pages,
   colorInvert = false,
 }: Props): JSX.Element => {
-  const path = useLocation();
   const theme = useTheme();
   const { mode } = theme.palette;
   const { main } = pages;
@@ -44,11 +44,7 @@ const Topbar = ({
       >
         <Box
           component={'img'}
-          src={
-            mode === 'light' && !colorInvert
-              ? 'https://assets.maccarianagency.com/the-front/logos/logo.svg'
-              : 'https://assets.maccarianagency.com/the-front/logos/logo-negative.svg'
-          }
+          src={mode === 'light' && !colorInvert ? logoDark : logoLight}
           height={1}
           width={1}
         />
