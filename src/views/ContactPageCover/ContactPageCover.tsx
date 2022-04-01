@@ -7,6 +7,7 @@ import Box from '@mui/material/Box';
 import Main from 'layouts/Main';
 import Container from 'components/Container';
 import { Form } from './components';
+import contactImage from 'assets/contact-image.jpg';
 
 const ContactPageCover = (): JSX.Element => {
   const theme = useTheme();
@@ -38,11 +39,12 @@ const ContactPageCover = (): JSX.Element => {
           component={LazyLoadImage}
           height={1}
           width={1}
-          src={'https://assets.maccarianagency.com/backgrounds/img23.jpg'}
+          src={contactImage}
           alt="..."
           effect="blur"
           sx={{
             objectFit: 'cover',
+            alignRight: 0,
             '& .lazy-load-image-loaded': {
               height: 1,
             },
