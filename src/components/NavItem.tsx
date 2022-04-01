@@ -23,8 +23,25 @@ const NavItem = ({ item }: Props) => {
       marginLeft={4}
       sx={{
         '& a': {
-          textDecoration: path.pathname === item.href ? 'underline' : 'none',
+          textDecoration: 'none',
           color: mode === 'light' ? 'GrayText' : 'inherit',
+          '&::after': {
+            content: '""',
+            position: 'absolute',
+            width: '100%',
+            height: '2px',
+            backgroundColor: mode === 'light' ? 'GrayText' : 'white',
+            bottom: -5,
+            left: 0,
+            transform: path.pathname !== item.href && 'scaleX(0)',
+            transformOrigin: 'bottom right',
+            borderRadius: '2px',
+          },
+          '&:hover::after': {
+            transform: 'scaleX(1)',
+            transition: 'transform 0.25s linear',
+            transformOrigin: 'bottom left',
+          },
         },
       }}
     >
@@ -33,6 +50,7 @@ const NavItem = ({ item }: Props) => {
         href={item.href}
         title={item.title}
         variant="h6"
+        sx={{ position: 'relative' }}
       >
         {item.title}
       </Typography>
