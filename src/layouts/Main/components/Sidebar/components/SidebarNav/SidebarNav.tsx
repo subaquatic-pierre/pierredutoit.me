@@ -3,16 +3,11 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import { useTheme } from '@mui/material/styles';
 
-import NavItem from './components/NavItem';
+import NavItem from 'components/NavItem';
 
 interface Props {
   pages: {
-    landings: Array<PageItem>;
-    company: Array<PageItem>;
-    account: Array<PageItem>;
-    secondary: Array<PageItem>;
-    blog: Array<PageItem>;
-    portfolio: Array<PageItem>;
+    main: Array<PageItem>;
   };
 }
 
@@ -20,14 +15,7 @@ const SidebarNav = ({ pages }: Props): JSX.Element => {
   const theme = useTheme();
   const { mode } = theme.palette;
 
-  const {
-    landings: landingPages,
-    secondary: secondaryPages,
-    company: companyPages,
-    account: accountPages,
-    portfolio: portfolioPages,
-    blog: blogPages,
-  } = pages;
+  const { main } = pages;
 
   return (
     <Box>
@@ -52,24 +40,9 @@ const SidebarNav = ({ pages }: Props): JSX.Element => {
         </Box>
       </Box>
       <Box paddingX={2} paddingY={2}>
-        <Box>
-          <NavItem title={'Landings'} items={landingPages} />
-        </Box>
-        <Box>
-          <NavItem title={'Company'} items={companyPages} />
-        </Box>
-        <Box>
-          <NavItem title={'Pages'} items={secondaryPages} />
-        </Box>
-        <Box>
-          <NavItem title={'Account'} items={accountPages} />
-        </Box>
-        <Box>
-          <NavItem title={'Blog'} items={blogPages} />
-        </Box>
-        <Box>
-          <NavItem title={'Portfolio'} items={portfolioPages} />
-        </Box>
+        {main.map((item, index) => (
+          <NavItem item={item} key={index} />
+        ))}
         <Box marginTop={2}>
           <Button
             size={'large'}
