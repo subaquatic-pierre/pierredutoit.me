@@ -5,6 +5,10 @@ const pages = {
       href: '/',
     },
     {
+      title: 'Projects',
+      href: '/projects',
+    },
+    {
       title: 'Contact',
       href: '/contact',
     },

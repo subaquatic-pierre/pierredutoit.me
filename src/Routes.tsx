@@ -8,7 +8,7 @@ const Routes = (): JSX.Element => {
       {viewsRoutes.map((item, i) => (
         <Route key={i} path={item.path} element={item.renderer()} />
       ))}
-      <Route path="*" element={<Navigate replace to="/not-found-cover" />} />
+      <Route path="*" element={<Navigate replace to="/not-found" />} />
     </ReactRoutes>
   );
 };

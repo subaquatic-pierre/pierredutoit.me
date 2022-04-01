@@ -6,7 +6,7 @@ import Container from 'components/Container';
 import {
   GetStarted,
   Features,
-  QuickStart,
+  Solutions,
   Services,
   Benefits,
   Hero,
@@ -31,11 +31,11 @@ const IndexView = (): JSX.Element => {
             position: 'relative',
           }}
         >
-          <Container maxWidth={600}>
-            <QuickStart />
-          </Container>
           <Container>
             <Features />
+          </Container>
+          <Container>
+            <Solutions />
           </Container>
           <Container>
             <Benefits />

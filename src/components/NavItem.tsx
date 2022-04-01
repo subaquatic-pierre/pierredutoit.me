@@ -28,7 +28,12 @@ const NavItem = ({ item }: Props) => {
         },
       }}
     >
-      <Typography component="a" href="/contact" title="theFront" variant="h6">
+      <Typography
+        component="a"
+        href={item.href}
+        title={item.title}
+        variant="h6"
+      >
         {item.title}
       </Typography>
     </Box>
