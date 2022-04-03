@@ -5,12 +5,12 @@ import { useTheme } from '@mui/material/styles';
 import { Octokit } from '@octokit/core';
 
 import Main from 'layouts/Main';
+
 import Container from 'components/Container';
 import PortfolioHero from 'components/PortfolioHero';
 import PortfolioMain from 'components/PortfolioMain';
 import Partners from 'components/Partners';
-
-import projectPlaceholderImg from 'assets/project-placeholder.jpg';
+import PortfolioPlaceholder from 'components/PortfolioPlaceholder';
 
 const PortfolioGrid = (): JSX.Element => {
   const theme = useTheme();
@@ -28,6 +28,7 @@ const PortfolioGrid = (): JSX.Element => {
     // Decode base64 string
     const encoded = atob(content);
     setProjects(JSON.parse(encoded));
+    // setProjectsLoaded(true);
   };
 
   React.useEffect(() => {
@@ -43,7 +44,11 @@ const PortfolioGrid = (): JSX.Element => {
         <Partners />
       </Container>
       <Container>
-        <PortfolioMain projects={projects} />
+        {projectsLoaded ? (
+          <PortfolioMain projects={projects} />
+        ) : (
+          <PortfolioPlaceholder />
+        )}
       </Container>
       <Box
         position={'relative'}
