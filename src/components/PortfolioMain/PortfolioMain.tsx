@@ -6,7 +6,10 @@ import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
-import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
+
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LanguageIcon from '@mui/icons-material/Language';
 
 import ProjectImage from 'components/ProjectImage';
 
@@ -23,8 +26,6 @@ const Main = ({ projects }: Props): JSX.Element => {
         {projects.map((item, i) => (
           <Grid item xs={12} sm={6} md={4} key={i}>
             <Box
-              component={'a'}
-              href={''}
               display={'block'}
               width={1}
               height={1}
@@ -54,28 +55,19 @@ const Main = ({ projects }: Props): JSX.Element => {
                 </Box>
                 <Box flexGrow={1} />
                 <Box component={CardActions} justifyContent={'flex-start'}>
-                  <Button
-                    size="large"
-                    endIcon={
-                      <svg
-                        width={16}
-                        height={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M17 8l4 4m0 0l-4 4m4-4H3"
-                        />
-                      </svg>
-                    }
-                  >
-                    Learn more
-                  </Button>
+                  <IconButton href={item.github} target="blank">
+                    <GitHubIcon />
+                  </IconButton>
+                  {item.url && (
+                    <IconButton href={item.url} target="blank">
+                      <LanguageIcon />
+                    </IconButton>
+                  )}
+                  {item.youtube && (
+                    <IconButton href={item.youtube} target="blank">
+                      <LanguageIcon />
+                    </IconButton>
+                  )}
                 </Box>
               </Box>
             </Box>

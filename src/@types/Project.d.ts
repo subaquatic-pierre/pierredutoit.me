@@ -4,4 +4,5 @@ interface Project {
   github: string;
   screenshot: string;
   url: string;
+  youtube: string;
 }
