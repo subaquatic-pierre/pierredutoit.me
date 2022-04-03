@@ -50,7 +50,10 @@ const NavItem = ({ item }: Props) => {
         href={item.href}
         title={item.title}
         variant="h6"
-        sx={{ position: 'relative' }}
+        sx={{
+          position: 'relative',
+          fontWeight: path.pathname === item.href && 600,
+        }}
       >
         {item.title}
       </Typography>

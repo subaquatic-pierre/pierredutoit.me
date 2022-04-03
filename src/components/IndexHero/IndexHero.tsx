@@ -133,7 +133,7 @@ const IndexHero = (): JSX.Element => {
                   strings={[
                     'software engineer.',
                     'cloud architect.',
-                    'blockchain enthusiast.',
+                    'blockchain developer.',
                   ]}
                   typeSpeed={80}
                   loop={true}
@@ -148,7 +148,8 @@ const IndexHero = (): JSX.Element => {
             >
               I am a self-taught software engineer with a passion for anything
               web. The internet is the future and its technologies are exciting
-              to explore, check out my latest projects or get in touch with me.
+              to explore and develop, check out my latest projects or get in
+              touch with me.
             </Typography>
             <Box
               display="flex"

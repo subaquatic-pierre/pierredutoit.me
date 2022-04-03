@@ -15,8 +15,8 @@ const Hero = (): JSX.Element => {
           gutterBottom
           sx={{ fontWeight: 400 }}
         >
-          theFront will make your product look modern and professional while
-          saving you precious time.
+          I will make your product look modern and professional with the best
+          coding practices.
         </Typography>
         <Typography
           variant="h3"
@@ -26,11 +26,11 @@ const Hero = (): JSX.Element => {
             fontWeight: 700,
           }}
         >
-          We{' '}
+          I{' '}
           <Typed
             strings={[
               'design and develop web apps',
-              'promote your business',
+              'plan and deploy cloud infrastructure',
               'do continues deployment',
             ]}
             typeSpeed={100}

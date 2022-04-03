@@ -12,9 +12,9 @@ import { colors } from '@mui/material';
 
 const mock = [
   {
-    title: 'Your brand platform',
+    title: 'Modern Front End',
     description:
-      'Monetize your website and manage all guest interactions with your own brand, logo and domains.',
+      'Modern front-end web application designs with React and Material-UI. Focusing on user experience, fast load times, extendable interfaces with SEO best practices and responsive mobile designs',
     illustration:
       'https://assets.maccarianagency.com/svg/illustrations/illustration4.svg',
     illustrationDark:
@@ -81,22 +81,14 @@ const Solutions = (): JSX.Element => {
             fontWeight: 700,
           }}
         >
-          Your new website marketing solution is here
+          Your new web app development solution is here
         </Typography>
         <Typography variant="h6" color={'text.secondary'} data-aos={'fade-up'}>
-          theFront Kit offers a completely customizable website landing pages
-          and supported pages management platform.
+          Using only the best development strategies and code practices.
           <br />
-          Here’s what makes us different.
+          Leveraging the latest cloud technology with efficiency and security in
+          mind.
         </Typography>
-        <Button
-          variant="contained"
-          color="primary"
-          size="large"
-          sx={{ marginTop: 2 }}
-        >
-          View all
-        </Button>
       </Box>
       <Grid container spacing={isMd ? 8 : 4}>
         {mock.map((item, i) => (
@@ -141,7 +133,7 @@ const Solutions = (): JSX.Element => {
                     width={1}
                   />
                 </Box>
-                <Box>
+                <Box sx={{ minHeight: '200px' }}>
                   <Typography
                     variant={'h6'}
                     gutterBottom
@@ -152,30 +144,6 @@ const Solutions = (): JSX.Element => {
                   <Typography color="text.secondary">
                     {item.description}
                   </Typography>
-                  <Button
-                    size={'large'}
-                    sx={{ marginTop: 2 }}
-                    endIcon={
-                      <Box
-                        component={'svg'}
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        width={24}
-                        height={24}
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M17 8l4 4m0 0l-4 4m4-4H3"
-                        />
-                      </Box>
-                    }
-                  >
-                    Learn more
-                  </Button>
                 </Box>
               </CardContent>
             </Box>

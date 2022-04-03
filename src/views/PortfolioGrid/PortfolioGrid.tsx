@@ -7,7 +7,6 @@ import Container from 'components/Container';
 import PortfolioHero from 'components/PortfolioHero';
 import PortfolioMain from 'components/PortfolioMain';
 import Partners from 'components/Partners';
-import PortfolioContact from 'components/PortfolioContact';
 
 const PortfolioGrid = (): JSX.Element => {
   const theme = useTheme();
@@ -51,9 +50,6 @@ const PortfolioGrid = (): JSX.Element => {
             d="M0,0c0,0,934.4,93.4,1920,0v100.1H0L0,0z"
           ></path>
         </Box>
-        <Container>
-          <PortfolioContact />
-        </Container>
       </Box>
     </Main>
   );
