@@ -1,6 +1,8 @@
 import React from 'react';
 import Box from '@mui/material/Box';
+
 import { useTheme } from '@mui/material/styles';
+import { Octokit } from '@octokit/core';
 
 import Main from 'layouts/Main';
 import Container from 'components/Container';
@@ -8,8 +10,30 @@ import PortfolioHero from 'components/PortfolioHero';
 import PortfolioMain from 'components/PortfolioMain';
 import Partners from 'components/Partners';
 
+import projectPlaceholderImg from 'assets/project-placeholder.jpg';
+
 const PortfolioGrid = (): JSX.Element => {
   const theme = useTheme();
+  const [projects, setProjects] = React.useState<Project[]>([]);
+  const [projectsLoaded, setProjectsLoaded] = React.useState(false);
+  const octokit = new Octokit();
+
+  const getProjects = async () => {
+    const response = await octokit.request(
+      'GET /repos/subaquatic-pierre/projects/contents/index.json',
+    );
+
+    const { content } = response.data;
+
+    // Decode base64 string
+    const encoded = atob(content);
+    setProjects(JSON.parse(encoded));
+  };
+
+  React.useEffect(() => {
+    getProjects();
+  }, []);
+
   return (
     <Main>
       <Container>
@@ -19,7 +43,7 @@ const PortfolioGrid = (): JSX.Element => {
         <Partners />
       </Container>
       <Container>
-        <PortfolioMain />
+        <PortfolioMain projects={projects} />
       </Container>
       <Box
         position={'relative'}

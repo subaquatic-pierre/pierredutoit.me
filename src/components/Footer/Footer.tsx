@@ -8,6 +8,8 @@ import { useTheme } from '@mui/material/styles';
 
 import logoDark from 'assets/Logo-dark.png';
 import logoLight from 'assets/Logo-light.png';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 const Footer = (): JSX.Element => {
   const theme = useTheme();
@@ -27,7 +29,7 @@ const Footer = (): JSX.Element => {
             display={'flex'}
             component="a"
             href="/"
-            title="theFront"
+            title="Pierre du Toit"
             width={80}
           >
             <Box
@@ -42,35 +44,23 @@ const Footer = (): JSX.Element => {
               <Link
                 underline="none"
                 component="a"
-                href="/"
+                href="https://www.linkedin.com/in/subaquatic-pierre/"
                 color="text.primary"
-                variant={'subtitle2'}
+                target={'blank'}
               >
-                Home
+                <LinkedInIcon fontSize="large" />
               </Link>
             </Box>
             <Box marginTop={1} marginRight={2}>
               <Link
                 underline="none"
                 component="a"
-                href="/docs/introduction"
+                href="https://github.com/subaquatic-pierre"
                 color="text.primary"
-                variant={'subtitle2'}
+                target={'blank'}
               >
-                Documentation
+                <GitHubIcon fontSize="large" />
               </Link>
-            </Box>
-            <Box marginTop={1}>
-              <Button
-                variant="outlined"
-                color="primary"
-                component="a"
-                target="blank"
-                href="https://mui.com/store/items/the-front-landing-page/"
-                size="small"
-              >
-                Purchase now
-              </Button>
             </Box>
           </Box>
         </Box>

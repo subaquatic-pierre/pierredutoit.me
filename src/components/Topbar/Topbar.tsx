@@ -4,8 +4,9 @@ import Button from '@mui/material/Button';
 import { alpha, useTheme } from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
 
-import logoDark from 'assets/Logo-dark.png';
+import logoDark from 'assets/logo-dark.svg';
 import logoLight from 'assets/Logo-light.png';
+
 import NavItem from 'components/NavItem';
 import ThemeModeToggler from 'components/ThemeModeToggler';
 
