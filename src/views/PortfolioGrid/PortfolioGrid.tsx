@@ -28,7 +28,7 @@ const PortfolioGrid = (): JSX.Element => {
     // Decode base64 string
     const encoded = atob(content);
     setProjects(JSON.parse(encoded));
-    // setProjectsLoaded(true);
+    setProjectsLoaded(true);
   };
 
   React.useEffect(() => {

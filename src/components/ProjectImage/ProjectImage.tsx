@@ -6,6 +6,7 @@ import Box from '@mui/material/Box';
 
 import { Octokit } from '@octokit/core';
 import projectPlaceholderImg from 'assets/project-placeholder.jpg';
+import Skeleton from '@mui/material/Skeleton';
 
 interface Props {
   item: Project;
@@ -19,36 +20,40 @@ const ProjectImage = ({ item }: Props): JSX.Element => {
   const [imageLoaded, setImageLoaded] = React.useState(false);
 
   const getProjectImage = async () => {
-    const screenshotUrl =
-      '/repos/subaquatic-pierre/projects/contents/screenshots/ballotonline.png';
+    const screenshotUrl = `/repos/subaquatic-pierre/projects/contents/screenshots/${item.screenshot}`;
 
-    const response = await octokit.request('GET ' + screenshotUrl);
+    try {
+      const response = await octokit.request('GET ' + screenshotUrl);
+      const { content } = response.data;
 
-    const { content } = response.data;
-
-    const src = 'data:image/jpg;base64,' + content;
-
-    setImage(src);
-    if (item.title !== 'pizza-app') {
-      setImageLoaded(true);
+      const src = 'data:image/jpg;base64,' + content;
+      setImage(src);
+    } catch (e) {
+      setImage(projectPlaceholderImg);
     }
+    setImageLoaded(true);
   };
 
   React.useEffect(() => {
     getProjectImage();
   }, []);
 
+  if (imageLoaded) {
+    return (
+      <Box
+        src={item.screenshot ? image : projectPlaceholderImg}
+        component="img"
+        title={item.title}
+        sx={{
+          height: { xs: 340, md: 340 },
+          filter: theme.palette.mode === 'dark' ? 'brightness(0.7)' : 'none',
+          objectFit: 'cover',
+        }}
+      />
+    );
+  }
   return (
-    <Box
-      src={imageLoaded ? image : projectPlaceholderImg}
-      component="img"
-      title={item.title}
-      sx={{
-        height: { xs: 340, md: 340 },
-        filter: theme.palette.mode === 'dark' ? 'brightness(0.7)' : 'none',
-        objectFit: 'cover',
-      }}
-    />
+    <Skeleton sx={{ height: 340 }} animation="wave" variant="rectangular" />
   );
 };
 
