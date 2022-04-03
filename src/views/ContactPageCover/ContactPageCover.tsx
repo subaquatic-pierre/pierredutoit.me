@@ -6,7 +6,7 @@ import Box from '@mui/material/Box';
 
 import Main from 'layouts/Main';
 import Container from 'components/Container';
-import { Form } from './components';
+import ContactForm from 'components/ContactForm';
 import contactImage from 'assets/contact-image.jpg';
 
 const ContactPageCover = (): JSX.Element => {
@@ -69,7 +69,7 @@ const ContactPageCover = (): JSX.Element => {
         >
           <Box height={1}>
             <Container>
-              <Form />
+              <ContactForm />
             </Container>
           </Box>
         </Box>

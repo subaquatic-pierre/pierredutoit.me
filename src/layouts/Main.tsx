@@ -8,9 +8,11 @@ import useScrollTrigger from '@mui/material/useScrollTrigger';
 
 import Container from 'components/Container';
 
-import { Topbar, Sidebar, Footer } from './components';
+import Topbar from 'components/Topbar';
+import Sidebar from 'components/Sidebar';
+import Footer from 'components/Footer';
 
-import pages from '../nav';
+import pages from './navigation';
 
 interface Props {
   children: React.ReactNode;

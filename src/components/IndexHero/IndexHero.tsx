@@ -86,7 +86,7 @@ const images = [
   },
 ];
 
-const Hero = (): JSX.Element => {
+const IndexHero = (): JSX.Element => {
   const theme = useTheme();
   const isMd = useMediaQuery(theme.breakpoints.up('md'), {
     defaultMatches: true,
@@ -246,4 +246,4 @@ const Hero = (): JSX.Element => {
   );
 };
 
-export default Hero;
+export default IndexHero;

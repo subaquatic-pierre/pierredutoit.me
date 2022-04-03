@@ -2,22 +2,21 @@ import React from 'react';
 import { alpha, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Main from 'layouts/Main';
+
+import GetStarted from 'components/GetStarted';
 import Container from 'components/Container';
-import {
-  GetStarted,
-  Features,
-  Solutions,
-  Services,
-  Benefits,
-  Hero,
-} from './components';
+import Features from 'components/Features';
+import Solutions from 'components/Solutions';
+import Services from 'components/Services';
+import Benefits from 'components/Benefits';
+import IndexHero from 'components/IndexHero';
 
 const IndexView = (): JSX.Element => {
   const theme = useTheme();
   return (
     <Box sx={{ overflowX: 'hidden' }}>
       <Main bgcolor={'background.paper'}>
-        <Hero />
+        <IndexHero />
         <Container>
           <Services />
         </Container>

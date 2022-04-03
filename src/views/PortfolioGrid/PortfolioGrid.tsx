@@ -4,20 +4,23 @@ import { useTheme } from '@mui/material/styles';
 
 import Main from 'layouts/Main';
 import Container from 'components/Container';
-import { Hero, Main as MainSection, Partners, Contact } from './components';
+import PortfolioHero from 'components/PortfolioHero';
+import PortfolioMain from 'components/PortfolioMain';
+import Partners from 'components/Partners';
+import PortfolioContact from 'components/PortfolioContact';
 
 const PortfolioGrid = (): JSX.Element => {
   const theme = useTheme();
   return (
     <Main>
       <Container>
-        <Hero />
+        <PortfolioHero />
       </Container>
       <Container paddingY={'0 !important'}>
         <Partners />
       </Container>
       <Container>
-        <MainSection />
+        <PortfolioMain />
       </Container>
       <Box
         position={'relative'}
@@ -49,7 +52,7 @@ const PortfolioGrid = (): JSX.Element => {
           ></path>
         </Box>
         <Container>
-          <Contact />
+          <PortfolioContact />
         </Container>
       </Box>
     </Main>
