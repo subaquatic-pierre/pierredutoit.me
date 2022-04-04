@@ -105,8 +105,6 @@ const ProjectCard = ({ projectMeta }: Props): JSX.Element => {
   return (
     <Grid item xs={12} sm={6} md={4}>
       <Box
-        component="a"
-        href={project.github}
         display={'block'}
         width={1}
         height={1}

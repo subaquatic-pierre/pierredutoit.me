@@ -56,7 +56,7 @@ const Features = (): JSX.Element => {
             <Typography variant={'h6'} component={'p'} color={'text.secondary'}>
               I'm from South Africa 🇿🇦, currently living in the UAE 🇦🇪. I have a
               passion for creating reliable, secure and efficient web apps. I
-              enjoy designing creative and user friendly UI's connected to
+              enjoy designing and developing user friendly UI's connected to
               powerful API's.
             </Typography>
           </Box>
