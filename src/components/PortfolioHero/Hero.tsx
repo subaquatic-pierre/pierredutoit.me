@@ -15,8 +15,7 @@ const Hero = (): JSX.Element => {
           gutterBottom
           sx={{ fontWeight: 400 }}
         >
-          I will make your product look modern and professional with the best
-          coding practices.
+          I make web apps look modern, professional and perform exceptionally.
         </Typography>
         <Typography
           variant="h3"

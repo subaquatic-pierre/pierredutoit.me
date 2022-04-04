@@ -4,25 +4,21 @@ import { useFormik } from 'formik';
 import * as yup from 'yup';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import { useTheme } from '@mui/material/styles';
+
+import { contactUrl } from 'const';
+import { handleSendEmail } from 'utils';
+import { useNavigate } from 'react-router-dom';
 
 const validationSchema = yup.object({
-  firstName: yup
+  name: yup
     .string()
     .trim()
     .min(2, 'Please enter a valid name')
     .max(50, 'Please enter a valid name')
     .required('Please specify your first name'),
-  lastName: yup
-    .string()
-    .trim()
-    .min(2, 'Please enter a valid name')
-    .max(50, 'Please enter a valid name')
-    .required('Please specify your last name'),
   email: yup
     .string()
     .trim()
@@ -32,17 +28,31 @@ const validationSchema = yup.object({
 });
 
 const Contact = (): JSX.Element => {
-  const theme = useTheme();
-
+  const navigate = useNavigate();
   const initialValues = {
-    firstName: '',
-    lastName: '',
+    name: '',
     email: '',
     message: '',
   };
 
   const onSubmit = (values) => {
-    return values;
+    handleSendEmail(contactUrl, values)
+      .then((res) => {
+        navigate('/', {
+          state: {
+            messages: [
+              'Thank you for your contact request, I will get back to you ASAP!',
+            ],
+          },
+        });
+      })
+      .catch((err) => {
+        navigate('/contact', {
+          state: {
+            messages: ['There was an error!'],
+          },
+        });
+      });
   };
 
   const formik = useFormik({
@@ -71,40 +81,22 @@ const Contact = (): JSX.Element => {
       <Box>
         <form onSubmit={formik.handleSubmit}>
           <Grid container spacing={4}>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12}>
               <TextField
                 sx={{ height: 54 }}
-                label="First name"
+                label="Full name"
                 variant="outlined"
                 color="primary"
                 size="medium"
-                name="firstName"
+                name="name"
                 fullWidth
-                value={formik.values.firstName}
+                value={formik.values.name}
                 onChange={formik.handleChange}
-                error={
-                  formik.touched.firstName && Boolean(formik.errors.firstName)
-                }
-                helperText={formik.touched.firstName && formik.errors.firstName}
+                error={formik.touched.name && Boolean(formik.errors.name)}
+                helperText={formik.touched.name && formik.errors.name}
               />
             </Grid>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                sx={{ height: 54 }}
-                label="Last name"
-                variant="outlined"
-                color="primary"
-                size="medium"
-                name="lastName"
-                fullWidth
-                value={formik.values.lastName}
-                onChange={formik.handleChange}
-                error={
-                  formik.touched.lastName && Boolean(formik.errors.lastName)
-                }
-                helperText={formik.touched.lastName && formik.errors.lastName}
-              />
-            </Grid>
+
             <Grid item xs={12}>
               <TextField
                 sx={{ height: 54 }}
