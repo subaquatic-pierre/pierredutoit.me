@@ -11,21 +11,26 @@ import PortfolioMain from 'components/PortfolioMain';
 import Partners from 'components/Partners';
 import PortfolioPlaceholder from 'components/PortfolioPlaceholder';
 
+import { githubUsername } from 'const';
+const githubToken = process.env.REACT_APP_FOO;
+
 const PortfolioGrid = (): JSX.Element => {
-  const [projects, setProjects] = React.useState<Project[]>([]);
+  const [projectsMetaData, setProjectsMetaData] = React.useState<
+    ProjectMetaData[]
+  >([]);
   const [projectsLoaded, setProjectsLoaded] = React.useState(false);
-  const octokit = new Octokit();
+  const octokit = new Octokit({ auth: githubToken });
 
   const getProjects = async () => {
     const response = await octokit.request(
-      'GET /repos/subaquatic-pierre/projects/contents/index.json',
+      `GET /repos/${githubUsername}/projects/contents/index.json`,
     );
 
     const { content } = response.data;
 
     // Decode base64 string
     const encoded = atob(content);
-    setProjects(JSON.parse(encoded));
+    setProjectsMetaData(JSON.parse(encoded));
     setProjectsLoaded(true);
   };
 
@@ -43,7 +48,7 @@ const PortfolioGrid = (): JSX.Element => {
       </Container>
       <Container>
         {projectsLoaded ? (
-          <PortfolioMain projects={projects} />
+          <PortfolioMain projectMetaData={projectsMetaData} />
         ) : (
           <PortfolioPlaceholder />
         )}
