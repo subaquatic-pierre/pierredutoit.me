@@ -72,10 +72,10 @@ const Features = (): JSX.Element => {
             display: { xs: 'none', md: 'flex' },
           }}
         >
-          <Box component={Card} boxShadow={4} height={1} width={1}>
+          <Box component={Card} boxShadow={4} height={400} width={1}>
             <Box
               component="img"
-              height={400}
+              height="100%"
               width="100%"
               src={profilePic}
               sx={{ objectFit: 'cover', objectPosition: 'center 60%' }}
