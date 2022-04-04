@@ -7,7 +7,6 @@ import GetStarted from 'components/GetStarted';
 import Container from 'components/Container';
 import Features from 'components/Features';
 import Solutions from 'components/Solutions';
-import Services from 'components/Services';
 import Benefits from 'components/Benefits';
 import IndexHero from 'components/IndexHero';
 

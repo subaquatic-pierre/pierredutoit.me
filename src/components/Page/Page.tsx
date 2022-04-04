@@ -28,7 +28,7 @@ export const useDarkMode = (): [string, () => void, boolean] => {
       const localTheme = window.localStorage.getItem('themeMode');
       localTheme ? setTheme(localTheme) : setMode('light');
     } catch {
-      setMode('light');
+      setMode('dark');
     }
 
     setMountedComponent(true);

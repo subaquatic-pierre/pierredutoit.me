@@ -8,6 +8,8 @@ import IconButton from '@mui/material/IconButton';
 
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LanguageIcon from '@mui/icons-material/Language';
+import StarBorderIcon from '@mui/icons-material/StarBorder';
+import ForkLeftIcon from '@mui/icons-material/ForkLeft';
 
 interface Props {
   project: Project;
@@ -30,20 +32,32 @@ const ProjectCardFooter = ({ project }: Props): JSX.Element => {
           ))}
         </Box>
       </Box>
-      <Box component={CardActions} justifyContent={'flex-start'}>
-        <IconButton href={project.github} target="blank">
-          <GitHubIcon />
-        </IconButton>
-        {project.url && (
-          <IconButton href={project.url} target="blank">
-            <LanguageIcon />
+      <Box component={CardActions} justifyContent={'space-between'}>
+        <Box>
+          <IconButton href={project.github} target="blank">
+            <GitHubIcon />
           </IconButton>
-        )}
-        {project.youtube && (
-          <IconButton href={project.youtube} target="blank">
-            <LanguageIcon />
+          {project.url && (
+            <IconButton href={project.url} target="blank">
+              <LanguageIcon />
+            </IconButton>
+          )}
+          {project.youtube && (
+            <IconButton href={project.youtube} target="blank">
+              <LanguageIcon />
+            </IconButton>
+          )}
+        </Box>
+        <Box>
+          <IconButton disableRipple>
+            <StarBorderIcon />
+            <Typography marginLeft={1}>{project.stars}</Typography>
           </IconButton>
-        )}
+          <IconButton disableRipple>
+            <ForkLeftIcon />
+            <Typography marginLeft={1}>{project.forks}</Typography>
+          </IconButton>
+        </Box>
       </Box>
     </Box>
   );

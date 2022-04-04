@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { useTheme } from '@mui/material/styles';
 import { Octokit } from '@octokit/core';
 
 import Main from 'layouts/Main';
@@ -15,11 +14,43 @@ import { githubUsername } from 'const';
 const githubToken = process.env.REACT_APP_FOO;
 
 const PortfolioGrid = (): JSX.Element => {
-  const [projectsMetaData, setProjectsMetaData] = React.useState<
-    ProjectMetaData[]
-  >([]);
+  const [allProjects, setAllProjects] = React.useState<ProjectMetaData[]>([]);
   const [projectsLoaded, setProjectsLoaded] = React.useState(false);
+
   const octokit = new Octokit({ auth: githubToken });
+
+  // TODO: Implement infinite scroll for projects
+  // const [projectsMetaData, setProjectsMetaData] = React.useState<
+  //   ProjectMetaData[]
+  // >([]);
+  // const [currentPagIndex, setCurrentPagIndex] = React.useState<number>(0);
+
+  // const updateProjects = () => {
+  //   console.log('update projects');
+  //   const newIndex = currentPagIndex + 3;
+  //   const newElements = allProjects.slice(newIndex, newIndex + 3);
+  //   // setProjectsMetaData((oldElements) => [...oldElements, ...newElements]);
+  //   // console.log('update projects');
+  //   console.log(newElements);
+  //   setCurrentPagIndex(newIndex + 3);
+  // };
+
+  // const addInfiniteScrollListener = () => {
+  //   return window.addEventListener('scroll', handleInfiniteScroll);
+  // };
+  // const removeInfiniteScrollListener = () => {
+  //   return window.removeEventListener('scroll', handleInfiniteScroll);
+  // };
+
+  // const handleInfiniteScroll = () => {
+  //   if (
+  //     window.innerHeight + window.scrollY >=
+  //     document.body.offsetHeight - 50
+  //   ) {
+  //     removeInfiniteScrollListener();
+  //     setTimeout(updateProjects, 1000);
+  //   }
+  // };
 
   const getProjects = async () => {
     const response = await octokit.request(
@@ -30,7 +61,8 @@ const PortfolioGrid = (): JSX.Element => {
 
     // Decode base64 string
     const encoded = atob(content);
-    setProjectsMetaData(JSON.parse(encoded));
+    const projects = JSON.parse(encoded);
+    setAllProjects(projects);
     setProjectsLoaded(true);
   };
 
@@ -48,7 +80,7 @@ const PortfolioGrid = (): JSX.Element => {
       </Container>
       <Container>
         {projectsLoaded ? (
-          <PortfolioMain projectMetaData={projectsMetaData} />
+          <PortfolioMain projectMetaData={allProjects} />
         ) : (
           <PortfolioPlaceholder />
         )}
