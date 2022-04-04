@@ -17,9 +17,6 @@ const IndexView = (): JSX.Element => {
     <Box sx={{ overflowX: 'hidden' }}>
       <Main bgcolor={'background.paper'}>
         <IndexHero />
-        <Container>
-          <Services />
-        </Container>
         <Box
           sx={{
             backgroundImage: `linear-gradient(to bottom, ${alpha(

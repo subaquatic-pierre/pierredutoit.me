@@ -1,7 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
 import React, { useState } from 'react';
-import CountUp from 'react-countup';
-import VisibilitySensor from 'react-visibility-sensor';
 import { useTheme } from '@mui/material/styles';
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
@@ -9,6 +7,8 @@ import Box from '@mui/material/Box';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
+
+import profilePic from 'assets/profile-pic.jpg';
 
 const mock = [
   {
@@ -51,37 +51,15 @@ const Features = (): JSX.Element => {
         <Grid item xs={12} md={6} data-aos={isMd ? 'fade-right' : 'fade-up'}>
           <Box marginBottom={4}>
             <Typography sx={{ fontWeight: 700 }} variant={'h4'} gutterBottom>
-              The powerful and flexible theme for all kinds of businesses
+              A full stack web developer
             </Typography>
             <Typography variant={'h6'} component={'p'} color={'text.secondary'}>
-              Whether you're creating a subscription service, an on-demand
-              marketplace, an e-commerce store, or a portfolio showcase,
-              theFront helps you create the best possible product for your
-              users.
+              I'm from South Africa 🇿🇦, currently living in the UAE 🇦🇪. I have a
+              passion for creating reliable, secure and efficient web apps. I
+              enjoy designing creative and user friendly UI's connected to
+              powerful API's.
             </Typography>
           </Box>
-          <Grid container spacing={2}>
-            {mock.map((item, i) => (
-              <Grid key={i} item xs={12} md={4}>
-                <Typography variant="h4" color={'primary'} gutterBottom>
-                  <VisibilitySensor
-                    onChange={(isVisible) => setViewPortVisibility(isVisible)}
-                    delayedCall
-                  >
-                    <CountUp
-                      duration={2}
-                      end={viewPortEntered ? item.title : 0}
-                      start={0}
-                      suffix={item.suffix}
-                    />
-                  </VisibilitySensor>
-                </Typography>
-                <Typography color="text.secondary" component="p">
-                  {item.subtitle}
-                </Typography>
-              </Grid>
-            ))}
-          </Grid>
         </Grid>
         <Grid
           item
@@ -96,11 +74,11 @@ const Features = (): JSX.Element => {
         >
           <Box component={Card} boxShadow={4} height={1} width={1}>
             <Box
-              component={CardMedia}
-              height={1}
-              width={1}
-              minHeight={300}
-              image="https://assets.maccarianagency.com/backgrounds/img4.jpg"
+              component="img"
+              height={400}
+              width="100%"
+              src={profilePic}
+              sx={{ objectFit: 'cover', objectPosition: 'center 60%' }}
             />
           </Box>
         </Grid>

@@ -31,9 +31,9 @@ const GetStarted = (): JSX.Element => {
         sx={{ fontWeight: 400 }}
         align={'center'}
       >
-        Drop me a message, I am always interested in collaborating on new
-        projects. I am an advocate of open source projects, anything web or
-        blockchain applications
+        Get in touch with me, I am always interested in collaborating on new
+        projects. I&apos;m passionate about open source projects and blockchain
+        applications.
       </Typography>
       <Box
         display="flex"

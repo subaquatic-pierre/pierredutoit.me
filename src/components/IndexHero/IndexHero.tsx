@@ -8,11 +8,6 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { alpha, useTheme } from '@mui/material/styles';
 
 import Container from 'components/Container';
-import code1 from 'assets/code-1.jpg';
-import code2 from 'assets/code-2.jpg';
-import code3 from 'assets/code-3.jpg';
-import code4 from 'assets/code-4.jpg';
-import code5 from 'assets/code-5.jpg';
 import ballotonline from 'assets/ballotonline.png';
 import divesandybeachFlask from 'assets/divesandybeach-flask.png';
 import divesandybeach from 'assets/divesandybeach.png';
@@ -114,9 +109,9 @@ const IndexHero = (): JSX.Element => {
                 fontWeight: 700,
               }}
             >
-              Hey, my name is
+              Hey there! 👋
               <br />
-              Pierre 👋, I&apos;m a
+              I&apos;m Pierre, a
               <br />
               <Typography
                 color={'primary'}

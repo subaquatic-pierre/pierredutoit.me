@@ -2,7 +2,6 @@ import React from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -12,9 +11,9 @@ import { colors } from '@mui/material';
 
 const mock = [
   {
-    title: 'Modern Front End',
+    title: 'Modern UI / UX',
     description:
-      'Modern front-end web application designs with React and Material-UI. Focusing on user experience, fast load times, extendable interfaces with SEO best practices and responsive mobile designs',
+      'Modern front-end web application designs with React and Material-UI. Focusing on user experience, fast load times, extendable interfaces, SEO friendly responsive mobile designs',
     illustration:
       'https://assets.maccarianagency.com/svg/illustrations/illustration4.svg',
     illustrationDark:
@@ -22,9 +21,9 @@ const mock = [
     color: colors.blue[200],
   },
   {
-    title: 'Your brand platform',
+    title: 'Powerful API Development',
     description:
-      'Monetize your website and manage all guest interactions with your own brand, logo and domains.',
+      'Powerful back-end REST API designed with NodeJs and Express. Versatile and reliable GraphQL API designed with Python, Flask and Django',
     illustration:
       'https://assets.maccarianagency.com/svg/illustrations/illustration3.svg',
     illustrationDark:
@@ -32,10 +31,9 @@ const mock = [
     color: colors.purple[200],
   },
   {
-    label: 'Client portal access',
-    title: 'Simple customer dashboards',
+    title: 'Secure Cloud Infrastructure',
     description:
-      'Give sub-users access to a simplified dashboard with limited permission levels to offer remote management and real-time analytics.',
+      'Using the latest in AWS Cloud technology, leveraging infrastructure as code with Terraform to deploy reliable, secure and scalable infrastructure for any web application.',
     illustration:
       'https://assets.maccarianagency.com/svg/illustrations/illustration2.svg',
     illustrationDark:
@@ -43,9 +41,9 @@ const mock = [
     color: colors.indigo[200],
   },
   {
-    title: 'Mobile compatible platform',
+    title: 'Blockchain Development',
     description:
-      'Introduce your brand-new mobile friendly website to your customers. Seamlessly integrates with WiFi hardware and marketing automation software.',
+      'Blockchain and Web3 is the next step in web evolution. Using Solidity to develop smart contracts which interact it EVM compatible blockchains, leveraging the Ethers project to connect retrieve on-chain data.',
     illustration:
       'https://assets.maccarianagency.com/svg/illustrations/illustration1.svg',
     illustrationDark:
@@ -81,7 +79,7 @@ const Solutions = (): JSX.Element => {
             fontWeight: 700,
           }}
         >
-          Your new web app development solution is here
+          Your web app development solution is here
         </Typography>
         <Typography variant="h6" color={'text.secondary'} data-aos={'fade-up'}>
           Using only the best development strategies and code practices.
@@ -115,10 +113,16 @@ const Solutions = (): JSX.Element => {
                 <Box
                   display={'flex'}
                   justifyContent={'center'}
-                  marginBottom={{ xs: 2, md: 4 }}
+                  marginBottom={{
+                    xs: 2,
+                    md: 4,
+                  }}
                   sx={{
                     '& .lazy-load-image-loaded': {
-                      maxWidth: { xs: '80%', md: '70%' },
+                      maxWidth: {
+                        xs: '80%',
+                        md: '70%',
+                      },
                     },
                   }}
                 >
@@ -133,11 +137,17 @@ const Solutions = (): JSX.Element => {
                     width={1}
                   />
                 </Box>
-                <Box sx={{ minHeight: '200px' }}>
+                <Box
+                  sx={{
+                    minHeight: '200px',
+                  }}
+                >
                   <Typography
                     variant={'h6'}
                     gutterBottom
-                    sx={{ fontWeight: 700 }}
+                    sx={{
+                      fontWeight: 700,
+                    }}
                   >
                     {item.title}
                   </Typography>

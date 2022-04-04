@@ -50,7 +50,7 @@ const Main = ({
   return (
     <Box>
       <AppBar
-        position={'sticky'}
+        position="sticky"
         sx={{
           top: 0,
           backgroundColor: trigger ? theme.palette.background.paper : bgcolor,

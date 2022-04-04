@@ -12,7 +12,6 @@ import Partners from 'components/Partners';
 import PortfolioPlaceholder from 'components/PortfolioPlaceholder';
 
 const PortfolioGrid = (): JSX.Element => {
-  const theme = useTheme();
   const [projects, setProjects] = React.useState<Project[]>([]);
   const [projectsLoaded, setProjectsLoaded] = React.useState(false);
   const octokit = new Octokit();
