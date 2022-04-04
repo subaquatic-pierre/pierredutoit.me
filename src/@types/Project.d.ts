@@ -13,4 +13,5 @@ interface Project {
   youtube: string;
   stars: number;
   forks: number;
+  tags: string[];
 }

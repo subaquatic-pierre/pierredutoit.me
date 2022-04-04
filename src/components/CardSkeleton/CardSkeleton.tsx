@@ -6,15 +6,20 @@ import Skeleton from '@mui/material/Skeleton';
 
 const CardSkeleton = (): JSX.Element => {
   return (
-    <Card sx={{ maxWidth: 345, m: 2 }}>
-      <Skeleton sx={{ height: 340 }} animation="wave" variant="rectangular" />
+    <Card>
+      <Skeleton sx={{ height: 400 }} animation="wave" variant="rectangular" />
       <CardContent>
         <React.Fragment>
-          <Skeleton animation="wave" height={10} style={{ marginBottom: 6 }} />
-          <Skeleton animation="wave" height={10} style={{ marginBottom: 6 }} />
-          <Skeleton animation="wave" height={10} style={{ marginBottom: 6 }} />
-          <Skeleton animation="wave" height={10} style={{ marginBottom: 6 }} />
-          <Skeleton animation="wave" height={10} width="80%" />
+          <Skeleton
+            animation="wave"
+            height={30}
+            width="50%"
+            style={{ marginBottom: 14 }}
+          />
+          <Skeleton animation="wave" height={20} style={{ marginBottom: 6 }} />
+          <Skeleton animation="wave" height={20} style={{ marginBottom: 6 }} />
+          <Skeleton animation="wave" height={20} style={{ marginBottom: 6 }} />
+          <Skeleton animation="wave" height={20} style={{ marginBottom: 60 }} />
         </React.Fragment>
       </CardContent>
     </Card>

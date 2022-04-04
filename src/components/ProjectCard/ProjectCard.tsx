@@ -29,6 +29,7 @@ const blankProject: Project = {
   youtube: '',
   stars: 0,
   forks: 0,
+  tags: [],
 };
 
 interface Props {
@@ -38,6 +39,7 @@ interface Props {
 const ProjectCard = ({ projectMeta }: Props): JSX.Element => {
   const [project, setProject] = React.useState<Project>(blankProject);
   const [loading, setLoading] = React.useState(true);
+  const [failed, setFailed] = React.useState(false);
 
   const octokit = new Octokit({ auth: githubToken });
   const theme = useTheme();
@@ -69,19 +71,22 @@ const ProjectCard = ({ projectMeta }: Props): JSX.Element => {
 
     try {
       const { data } = response;
+      console.log(data);
       const project: Project = {
         title: data.name,
-        description: data.something,
+        description: data.description,
         github: data.html_url,
         screenshot: image,
         url: data.homepage,
         youtube: projectMeta.youtube,
         stars: data.stargazers_count,
         forks: data.forks,
+        tags: data.topics,
       };
       setProject(project);
     } catch (e) {
       console.log(e);
+      setFailed(true);
     }
     setLoading(false);
   };
@@ -89,6 +94,14 @@ const ProjectCard = ({ projectMeta }: Props): JSX.Element => {
   React.useEffect(() => {
     fetchProjectData();
   }, []);
+
+  if (failed) {
+    return (
+      <Grid item xs={12} sm={6} md={4}>
+        <CardSkeleton />
+      </Grid>
+    );
+  }
 
   return (
     <Grid item xs={12} sm={6} md={4}>

@@ -11,22 +11,22 @@ import LanguageIcon from '@mui/icons-material/Language';
 
 interface Props {
   project: Project;
-  projectTags?: string[];
 }
 
-const ProjectCardFooter = ({
-  project,
-  projectTags = [],
-}: Props): JSX.Element => {
+const ProjectCardFooter = ({ project }: Props): JSX.Element => {
   return (
     <Box>
       <Box component={CardContent}>
-        <Typography variant={'body2'} color="text.secondary">
+        <Typography variant={'body1'} color="text.secondary">
           Tags:
         </Typography>
-        <Box>
-          {projectTags.map((tag, i) => (
-            <Box key={i}>{tag}</Box>
+        <Box display="flex">
+          {project.tags.map((tag, i) => (
+            <Box marginRight={1} key={i}>
+              <Typography variant={'body2'} color="text.secondary">
+                #{tag}
+              </Typography>
+            </Box>
           ))}
         </Box>
       </Box>
