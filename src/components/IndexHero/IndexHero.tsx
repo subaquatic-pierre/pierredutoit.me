@@ -8,78 +8,8 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { alpha, useTheme } from '@mui/material/styles';
 
 import Container from 'components/Container';
-import ballotonline from 'assets/ballotonline.png';
-import divesandybeachFlask from 'assets/divesandybeach-flask.png';
-import divesandybeach from 'assets/divesandybeach.png';
-import diveschedule from 'assets/diveschedule.png';
-import pizza from 'assets/pizza.png';
-import portfolio from 'assets/portfolio.png';
-import recipes from 'assets/recipes.png';
-import roombaBots from 'assets/roombaBots.png';
-import scubadivedubai from 'assets/scubadivedubai.png';
-import scubadivedubaiEcommerce from 'assets/scubadivedubaiEcommerce.png';
-import suretta from 'assets/suretta.png';
-import todoapp from 'assets/todoapp.png';
 
-const images = [
-  {
-    group: [
-      {
-        cover: ballotonline,
-      },
-      {
-        cover: divesandybeachFlask,
-      },
-      {
-        cover: diveschedule,
-      },
-    ],
-  },
-  {
-    group: [
-      {
-        cover: divesandybeach,
-      },
-      {
-        cover: pizza,
-      },
-      {
-        cover: portfolio,
-      },
-      {
-        cover: recipes,
-      },
-      {
-        cover: roombaBots,
-      },
-    ],
-  },
-  {
-    group: [
-      {
-        cover: scubadivedubai,
-      },
-      {
-        cover: scubadivedubaiEcommerce,
-      },
-      {
-        cover: todoapp,
-      },
-      {
-        cover: suretta,
-      },
-      {
-        cover: scubadivedubaiEcommerce,
-      },
-      {
-        cover: scubadivedubai,
-      },
-      {
-        cover: pizza,
-      },
-    ],
-  },
-];
+import launch from 'assets/Launch.svg';
 
 const IndexHero = (): JSX.Element => {
   const theme = useTheme();
@@ -183,41 +113,11 @@ const IndexHero = (): JSX.Element => {
         </Container>
         <Box
           sx={{
-            transform: 'rotate(-20deg)',
             display: { xs: 'none', sm: 'block' },
           }}
         >
-          <Box
-            display={'flex'}
-            width={'50rem'}
-            left={'50%'}
-            top={0}
-            position={'absolute'}
-            sx={{ transform: 'translate3d(20%, -50%, 0)' }}
-          >
-            {images.map((item, i) => (
-              <Box key={i} marginTop={{ sm: -(i * 16) }} marginX={1}>
-                {item.group.map((g, j) => (
-                  <Box
-                    key={j}
-                    padding={1}
-                    bgcolor={'background.paper'}
-                    borderRadius={2}
-                    boxShadow={3}
-                    marginTop={2}
-                  >
-                    <Box
-                      component={LazyLoadImage}
-                      effect="blur"
-                      src={g.cover}
-                      height={1}
-                      width={1}
-                      maxWidth={320}
-                    />
-                  </Box>
-                ))}
-              </Box>
-            ))}
+          <Box display={'flex'} left={'54%'} top={100} position={'absolute'}>
+            <Box component="img" width={'40rem'} src={launch}></Box>
           </Box>
         </Box>
       </Box>

@@ -4,8 +4,7 @@ import Button from '@mui/material/Button';
 import { alpha, useTheme } from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
 
-import logoDark from 'assets/logo-dark.svg';
-import logoLight from 'assets/Logo-light.png';
+import logo from 'assets/Logo.svg';
 
 import NavItem from 'components/NavItem';
 import ThemeModeToggler from 'components/ThemeModeToggler';
@@ -40,12 +39,15 @@ const Topbar = ({
         display={'flex'}
         component="a"
         href="/"
-        title="theFront"
-        width={{ xs: 100, md: 120 }}
+        title="Pierre Du Toit"
+        width={{ xs: 100, md: 180 }}
       >
         <Box
           component={'img'}
-          src={mode === 'light' && !colorInvert ? logoDark : logoLight}
+          src={logo}
+          sx={{
+            filter: mode === 'dark' && 'invert(100%)',
+          }}
           height={1}
           width={1}
         />

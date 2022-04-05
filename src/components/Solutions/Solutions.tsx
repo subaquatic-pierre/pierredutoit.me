@@ -9,45 +9,38 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { alpha, useTheme } from '@mui/material/styles';
 import { colors } from '@mui/material';
 
+import blockChain from 'assets//solutions/Augmented.svg';
+import api from 'assets//solutions/Visual.svg';
+import ui from 'assets//solutions/Messaging.svg';
+import cloud from 'assets//solutions/Data.svg';
+
 const mock = [
   {
     title: 'Modern UI / UX',
     description:
       'Modern front-end web application designs with React and Material-UI. Focusing on user experience, fast load times, extendable interfaces, SEO friendly responsive mobile designs',
-    illustration:
-      'https://assets.maccarianagency.com/svg/illustrations/illustration4.svg',
-    illustrationDark:
-      'https://assets.maccarianagency.com/svg/illustrations/illustration4--dark.svg',
+    illustration: ui,
     color: colors.blue[200],
   },
   {
     title: 'Powerful API Development',
     description:
       'Powerful back-end REST API designed with NodeJs and Express. Versatile and reliable GraphQL API designed with Python, Flask and Django',
-    illustration:
-      'https://assets.maccarianagency.com/svg/illustrations/illustration3.svg',
-    illustrationDark:
-      'https://assets.maccarianagency.com/svg/illustrations/illustration3--dark.svg',
+    illustration: api,
     color: colors.purple[200],
   },
   {
     title: 'Secure Cloud Infrastructure',
     description:
       'Using the latest in AWS Cloud technology, leveraging infrastructure as code with Terraform to deploy reliable, secure and scalable infrastructure for any web application.',
-    illustration:
-      'https://assets.maccarianagency.com/svg/illustrations/illustration2.svg',
-    illustrationDark:
-      'https://assets.maccarianagency.com/svg/illustrations/illustration2--dark.svg',
+    illustration: cloud,
     color: colors.indigo[200],
   },
   {
     title: 'Blockchain Development',
     description:
       'Blockchain and Web3 is the next step in web evolution. Using Solidity to develop smart contracts which interact it EVM compatible blockchains, leveraging the Ethers project to connect retrieve on-chain data.',
-    illustration:
-      'https://assets.maccarianagency.com/svg/illustrations/illustration1.svg',
-    illustrationDark:
-      'https://assets.maccarianagency.com/svg/illustrations/illustration1--dark.svg',
+    illustration: blockChain,
     color: colors.green[200],
   },
 ];
@@ -129,11 +122,7 @@ const Solutions = (): JSX.Element => {
                   <Box
                     component={LazyLoadImage}
                     effect="blur"
-                    src={
-                      theme.palette.mode === 'light'
-                        ? item.illustration
-                        : item.illustrationDark
-                    }
+                    src={item.illustration}
                     width={1}
                   />
                 </Box>

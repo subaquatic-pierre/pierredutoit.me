@@ -5,10 +5,10 @@ import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import { useTheme } from '@mui/material/styles';
 
-import logoDark from 'assets/Logo-dark.png';
-import logoLight from 'assets/Logo-light.png';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+
+import logo from 'assets/Logo.svg';
 
 const Footer = (): JSX.Element => {
   const theme = useTheme();
@@ -29,11 +29,14 @@ const Footer = (): JSX.Element => {
             component="a"
             href="/"
             title="Pierre du Toit"
-            width={80}
+            width={140}
           >
             <Box
               component={'img'}
-              src={mode === 'light' ? logoDark : logoLight}
+              src={logo}
+              sx={{
+                filter: mode === 'dark' && 'invert(100%)',
+              }}
               height={1}
               width={1}
             />
