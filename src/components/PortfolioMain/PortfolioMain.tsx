@@ -8,7 +8,6 @@ interface Props {
 }
 
 const Main = ({ projectMetaData }: Props): JSX.Element => {
-  console.log(projectMetaData.length);
   return (
     <Box>
       <Grid container spacing={4}>
