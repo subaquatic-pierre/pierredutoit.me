@@ -78,7 +78,7 @@ const Features = (): JSX.Element => {
               height="100%"
               width="100%"
               src={profilePic}
-              sx={{ objectFit: 'cover', objectPosition: 'center 60%' }}
+              sx={{ objectFit: 'cover', objectPosition: 'center' }}
             />
           </Box>
         </Grid>

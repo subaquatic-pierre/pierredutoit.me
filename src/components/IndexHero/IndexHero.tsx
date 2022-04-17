@@ -72,9 +72,8 @@ const IndexHero = (): JSX.Element => {
               sx={{ fontWeight: 400 }}
             >
               I am a self-taught software engineer with a passion for anything
-              web. The internet is the future and its technologies are exciting
-              to explore and develop, check out my latest projects or get in
-              touch with me.
+              web. I turn business objectives into deliverables, check out my
+              latest projects or get in touch with me.
             </Typography>
             <Box
               display="flex"
