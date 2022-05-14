@@ -1,0 +1,58 @@
+name: StagingCICD
+
+on:
+  push:
+    branches: [staging]
+
+jobs:
+  run-staging-ci-cd:
+    runs-on: ubuntu-latest
+    env:
+      # CREDENTIALS
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      AWS_REGION: ${{ secrets.AWS_REGION }}
+
+      # BUCKET SECRETS
+      STAGING_S3_BUCKET_ID: ${{ secrets.STAGING_S3_BUCKET_ID }}
+      STAGING_CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.STAGING_CLOUDFRONT_DISTRIBUTION_ID }}
+
+    steps:
+      # Checkout Repo
+      - uses: actions/checkout@v3
+
+      # Run install
+      - name: Run Install
+        run: npm install
+        working-directory: ./app
+
+      # Run Tests
+      - name: Run Tests
+        run: npm test
+        working-directory: ./app
+
+      # Build App
+      - name: Build App
+        run: npm run build
+        working-directory: ./app
+
+      # Configure AWS
+      - name: Configure AWS
+        run: |
+          sudo apt-get update && sudo apt-get -y install awscli
+          aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
+          aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY 
+          aws configure set default.region $AWS_REGION
+
+      # Deploy to bucket
+      - name: Deploy to Bucket
+        run: |
+          aws s3 cp build/ s3://$STAGING_S3_BUCKET_ID/ --recursive
+        working-directory: ./app
+
+      # Invalidate Cloudfront
+      - name: Invalidate Cloudfront
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id $STAGING_CLOUDFRONT_DISTRIBUTION_ID \
+            --paths "/"
