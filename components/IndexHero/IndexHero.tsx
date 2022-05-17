@@ -1,6 +1,6 @@
-import React from 'react';
 import Typed from 'react-typed';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+import Image from 'next/image';
+
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
@@ -8,8 +8,6 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { alpha, useTheme } from '@mui/material/styles';
 
 import Container from 'components/Container';
-
-import launch from 'assets/Launch.svg';
 
 const IndexHero = (): JSX.Element => {
   const theme = useTheme();
@@ -116,7 +114,7 @@ const IndexHero = (): JSX.Element => {
           }}
         >
           <Box display={'flex'} left={'54%'} top={100} position={'absolute'}>
-            <Box component="img" width={'40rem'} src={launch}></Box>
+            <Image height={500} width={500} src="/assets/Launch.svg" />
           </Box>
         </Box>
       </Box>

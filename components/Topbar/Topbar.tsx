@@ -1,13 +1,11 @@
-import React from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import { alpha, useTheme } from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
 
-import logo from 'assets/Logo.svg';
-
 import NavItem from 'components/NavItem';
 import ThemeModeToggler from 'components/ThemeModeToggler';
+import Image from 'next/image';
 
 interface Props {
   // eslint-disable-next-line @typescript-eslint/ban-types
@@ -42,14 +40,13 @@ const Topbar = ({
         title="Pierre Du Toit"
         width={{ xs: 100, md: 180 }}
       >
-        <Box
-          component={'img'}
-          src={logo}
-          sx={{
+        <Image
+          src="/assets/Logo.svg"
+          style={{
             filter: mode === 'dark' && 'invert(100%)',
           }}
-          height={1}
-          width={1}
+          height={300}
+          width={300}
         />
       </Box>
       <Box

@@ -2,30 +2,18 @@ import Box from '@mui/material/Box';
 import { useTheme } from '@mui/material/styles';
 import Image from 'next/image';
 
-import bootstrap from 'public/assets/svg/bootstrap-4.svg';
-import css3 from 'public/assets/svg/css3.svg';
-import gatsby from 'public/assets/svg/gatsby.svg';
-import github from 'public/assets/svg/github-icon-1.svg';
-import graphql from 'public/assets/svg/graphql.svg';
-import html5 from 'public/assets/svg/html5.svg';
-import material from 'public/assets/svg/material-ui-1.svg';
-import node from 'public/assets/svg/node-js-logo.svg';
-import python from 'public/assets/svg/python3.svg';
-import typescript from 'public/assets/svg/typescriptlang-icon.svg';
-import react from 'public/assets/svg/react-2.svg';
-
 const images = [
-  react,
-  python,
-  typescript,
-  material,
-  bootstrap,
-  html5,
-  css3,
-  gatsby,
-  github,
-  graphql,
-  node,
+  '/assets/svg/react-2.svg',
+  '/assets/svg/python3.svg',
+  '/assets/svg/typescriptlang-icon.svg',
+  '/assets/svg/material-ui-1.svg',
+  '/assets/svg/bootstrap-4.svg',
+  '/assets/svg/html5.svg',
+  '/assets/svg/css3.svg',
+  '/assets/svg/gatsby.svg',
+  '/assets/svg/github-icon-1.svg',
+  '/assets/svg/graphql.svg',
+  '/assets/svg/node-js-logo.svg',
 ];
 
 const Partners = (): JSX.Element => {

@@ -1,4 +1,3 @@
-import React from 'react';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
@@ -7,8 +6,7 @@ import { useTheme } from '@mui/material/styles';
 
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-
-import logo from 'assets/Logo.svg';
+import Image from 'next/image';
 
 const Footer = (): JSX.Element => {
   const theme = useTheme();
@@ -31,14 +29,13 @@ const Footer = (): JSX.Element => {
             title="Pierre du Toit"
             width={140}
           >
-            <Box
-              component={'img'}
-              src={logo}
-              sx={{
+            <Image
+              src="/assets/Logo.svg"
+              style={{
                 filter: mode === 'dark' && 'invert(100%)',
               }}
-              height={1}
-              width={1}
+              height={300}
+              width={300}
             />
           </Box>
           <Box display="flex" flexWrap={'wrap'} alignItems={'center'}>

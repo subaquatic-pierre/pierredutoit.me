@@ -1,46 +1,41 @@
-import React from 'react';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+import Image from 'next/image';
+
+import { alpha, useTheme } from '@mui/material/styles';
+import { colors } from '@mui/material';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import { alpha, useTheme } from '@mui/material/styles';
-import { colors } from '@mui/material';
-
-import blockChain from 'assets//solutions/Augmented.svg';
-import api from 'assets//solutions/Visual.svg';
-import ui from 'assets//solutions/Messaging.svg';
-import cloud from 'assets//solutions/Data.svg';
 
 const mock = [
   {
     title: 'Modern UI / UX',
     description:
       'Modern front-end web application designs with React and Material-UI. Focusing on user experience, fast load times, extendable interfaces, SEO friendly responsive mobile designs',
-    illustration: ui,
+    illustration: '/assets/solutions/Messaging.svg',
     color: colors.blue[200],
   },
   {
     title: 'Powerful API Development',
     description:
       'Powerful back-end REST API designed with NodeJs and Express. Versatile and reliable GraphQL API designed with Python, Flask and Django',
-    illustration: api,
+    illustration: '/assets/solutions/Visual.svg',
     color: colors.purple[200],
   },
   {
     title: 'Secure Cloud Infrastructure',
     description:
       'Using the latest in AWS Cloud technology, leveraging infrastructure as code with Terraform to deploy reliable, secure and scalable infrastructure for any web application.',
-    illustration: cloud,
+    illustration: '/assets/solutions/Data.svg',
     color: colors.indigo[200],
   },
   {
     title: 'Blockchain Development',
     description:
       'Blockchain and Web3 is the next step in web evolution. Using Solidity to develop smart contracts which interact it EVM compatible blockchains, leveraging the Ethers project to connect retrieve on-chain data.',
-    illustration: blockChain,
+    illustration: '/assets/solutions/Augmented.svg',
     color: colors.green[200],
   },
 ];
@@ -110,21 +105,8 @@ const Solutions = (): JSX.Element => {
                     xs: 2,
                     md: 4,
                   }}
-                  sx={{
-                    '& .lazy-load-image-loaded': {
-                      maxWidth: {
-                        xs: '80%',
-                        md: '70%',
-                      },
-                    },
-                  }}
                 >
-                  <Box
-                    component={LazyLoadImage}
-                    effect="blur"
-                    src={item.illustration}
-                    width={1}
-                  />
+                  <Image height={300} width={300} src={item.illustration} />
                 </Box>
                 <Box
                   sx={{
