@@ -28,15 +28,13 @@ const Footer = (): JSX.Element => {
             href="/"
             title="Pierre du Toit"
             width={140}
-          >
-            <Image
-              src="/assets/Logo.svg"
-              style={{
+            sx={{
+              '& > span': {
                 filter: mode === 'dark' && 'invert(100%)',
-              }}
-              height={300}
-              width={300}
-            />
+              },
+            }}
+          >
+            <Image src="/assets/Logo.svg" height={300} width={300} />
           </Box>
           <Box display="flex" flexWrap={'wrap'} alignItems={'center'}>
             <Box marginTop={1} marginRight={2}>

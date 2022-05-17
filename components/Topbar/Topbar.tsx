@@ -39,15 +39,13 @@ const Topbar = ({
         href="/"
         title="Pierre Du Toit"
         width={{ xs: 100, md: 180 }}
-      >
-        <Image
-          src="/assets/Logo.svg"
-          style={{
+        sx={{
+          '& > span': {
             filter: mode === 'dark' && 'invert(100%)',
-          }}
-          height={300}
-          width={300}
-        />
+          },
+        }}
+      >
+        <Image src="/assets/Logo.svg" height={300} width={300} />
       </Box>
       <Box
         sx={{

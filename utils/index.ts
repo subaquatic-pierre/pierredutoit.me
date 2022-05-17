@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 type EmailHelper = (url: string, data: any) => Promise<any>;
 
 export const handleSendEmail: EmailHelper = async function (

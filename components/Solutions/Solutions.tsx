@@ -47,7 +47,7 @@ const Solutions = (): JSX.Element => {
   });
 
   return (
-    <Box>
+    <Box marginBottom={20}>
       <Box marginBottom={4}>
         <Typography
           sx={{

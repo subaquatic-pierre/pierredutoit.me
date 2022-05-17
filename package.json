@@ -8,9 +8,6 @@
     "@mui/icons-material": "^5.2.4",
     "@mui/material": "^5.2.4",
     "@octokit/core": "^3.6.0",
-    "@testing-library/jest-dom": "^5.16.3",
-    "@testing-library/react": "^13.0.0",
-    "@testing-library/user-event": "^14.0.3",
     "aos": "^2.3.4",
     "card-validator": "^8.1.1",
     "formik": "^2.2.6",
@@ -21,7 +18,6 @@
     "react-dom": "18.1.0",
     "react-image-lightbox": "^5.1.4",
     "react-mui-notify": "^0.0.8",
-    "react-scripts": "5.0.0",
     "react-slick": "^0.28.1",
     "react-syntax-highlighter": "^15.4.5",
     "react-typed": "^1.2.0",
@@ -31,6 +27,11 @@
     "yup": "^0.32.11"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "5.16.4",
+    "@testing-library/react": "13.2.0",
+    "@testing-library/user-event": "14.2.0",
+    "jest": "28.1.0",
+    "jest-environment-jsdom": "28.1.0",
     "@types/aos": "^3.0.4",
     "@types/jest": "^27.4.1",
     "@types/mocha": "^9.1.0",
@@ -62,7 +63,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "react-scripts test",
+    "test": "jest --watch",
+    "test:ci": "jest --ci",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
