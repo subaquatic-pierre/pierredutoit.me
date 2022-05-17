@@ -1,8 +1,8 @@
 import { alpha, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
 
 import GetStarted from 'components/GetStarted';
-import Container from 'components/Container';
 import Features from 'components/Features';
 import Solutions from 'components/Solutions';
 import Benefits from 'components/Benefits';

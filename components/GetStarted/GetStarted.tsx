@@ -11,7 +11,7 @@ const GetStarted = (): JSX.Element => {
   });
 
   return (
-    <Box>
+    <Box my={10}>
       <Typography
         variant="h4"
         color="text.primary"

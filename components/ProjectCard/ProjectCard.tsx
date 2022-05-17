@@ -1,5 +1,4 @@
-import React from 'react';
-
+import { useState, useEffect } from 'react';
 import { useTheme } from '@mui/material/styles';
 import { Octokit } from '@octokit/core';
 
@@ -13,8 +12,6 @@ import Skeleton from '@mui/material/Skeleton';
 import ProjectImage from 'components/ProjectImage';
 import ProjectCardFooter from 'components/ProjectCardFooter';
 import CardSkeleton from 'components/CardSkeleton';
-
-import projectPlaceholderImg from 'assets/project-placeholder.jpg';
 
 import { githubUsername } from 'const';
 
@@ -37,18 +34,19 @@ interface Props {
 }
 
 const ProjectCard = ({ projectMeta }: Props): JSX.Element => {
-  const [project, setProject] = React.useState<Project>(blankProject);
-  const [loading, setLoading] = React.useState(true);
-  const [failed, setFailed] = React.useState(false);
+  const [project, setProject] = useState<Project>(blankProject);
+  const [loading, setLoading] = useState(true);
+  const [failed, setFailed] = useState(false);
 
   const octokit = new Octokit({ auth: githubToken });
   const theme = useTheme();
 
   const getProjectImage = async (): Promise<string> => {
+    const projectPlaceholderImgUrl = '/assets/project-placeholder.jpg';
     const screenshotUrl = `/repos/subaquatic-pierre/projects/contents/screenshots/${projectMeta.screenshot}`;
 
     if (!projectMeta.screenshot) {
-      return projectPlaceholderImg;
+      return projectPlaceholderImgUrl;
     }
 
     try {
@@ -58,7 +56,7 @@ const ProjectCard = ({ projectMeta }: Props): JSX.Element => {
       const src = 'data:image/jpg;base64,' + content;
       return src;
     } catch (e) {
-      return projectPlaceholderImg;
+      return projectPlaceholderImgUrl;
     }
   };
 
@@ -90,7 +88,7 @@ const ProjectCard = ({ projectMeta }: Props): JSX.Element => {
     setLoading(false);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     fetchProjectData();
   }, []);
 

@@ -14,13 +14,14 @@ const images = [
   '/assets/svg/github-icon-1.svg',
   '/assets/svg/graphql.svg',
   '/assets/svg/node-js-logo.svg',
+  '/assets/svg/next-js-svgrepo-com.svg',
 ];
 
 const Partners = (): JSX.Element => {
   const theme = useTheme();
   const { mode } = theme.palette;
   return (
-    <Box display="flex" flexWrap="wrap" justifyContent={'center'}>
+    <Box display="flex" flexWrap="wrap" my={5} justifyContent={'center'}>
       {images.map((item, i) => (
         <Box
           maxWidth={{ xs: 40, sm: 50 }}

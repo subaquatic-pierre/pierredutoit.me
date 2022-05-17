@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography';
 
 const Hero = (): JSX.Element => {
   return (
-    <Box>
+    <Box my={5}>
       <Box marginBottom={4}>
         <Typography
           variant="h6"
@@ -14,7 +14,7 @@ const Hero = (): JSX.Element => {
           gutterBottom
           sx={{ fontWeight: 400 }}
         >
-          Turning project objectives into deliverables.
+          Powering the web apps of the future.
         </Typography>
         <Typography
           variant="h3"

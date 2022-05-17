@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Octokit } from '@octokit/core';
+import Container from '@mui/material/Container';
 
-import Container from 'components/Container';
 import PortfolioHero from 'components/PortfolioHero';
 import PortfolioMain from 'components/PortfolioMain';
 import Partners from 'components/Partners';
@@ -15,39 +15,6 @@ const Projects = (): JSX.Element => {
   const [projectsLoaded, setProjectsLoaded] = useState(false);
 
   const octokit = new Octokit({ auth: githubToken });
-
-  // TODO: Implement infinite scroll for projects
-  // const [projectsMetaData, setProjectsMetaData] = React.useState<
-  //   ProjectMetaData[]
-  // >([]);
-  // const [currentPagIndex, setCurrentPagIndex] = React.useState<number>(0);
-
-  // const updateProjects = () => {
-  //   console.log('update projects');
-  //   const newIndex = currentPagIndex + 3;
-  //   const newElements = allProjects.slice(newIndex, newIndex + 3);
-  //   // setProjectsMetaData((oldElements) => [...oldElements, ...newElements]);
-  //   // console.log('update projects');
-  //   console.log(newElements);
-  //   setCurrentPagIndex(newIndex + 3);
-  // };
-
-  // const addInfiniteScrollListener = () => {
-  //   return window.addEventListener('scroll', handleInfiniteScroll);
-  // };
-  // const removeInfiniteScrollListener = () => {
-  //   return window.removeEventListener('scroll', handleInfiniteScroll);
-  // };
-
-  // const handleInfiniteScroll = () => {
-  //   if (
-  //     window.innerHeight + window.scrollY >=
-  //     document.body.offsetHeight - 50
-  //   ) {
-  //     removeInfiniteScrollListener();
-  //     setTimeout(updateProjects, 1000);
-  //   }
-  // };
 
   const getProjects = async () => {
     const response = await octokit.request(
@@ -71,11 +38,7 @@ const Projects = (): JSX.Element => {
     <>
       <Container>
         <PortfolioHero />
-      </Container>
-      <Container paddingY={'0 !important'}>
         <Partners />
-      </Container>
-      <Container>
         {projectsLoaded ? (
           <PortfolioMain projectMetaData={allProjects} />
         ) : (

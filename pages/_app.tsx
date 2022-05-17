@@ -1,24 +1,25 @@
-import {useEffect} from 'react'
+import React, { useEffect } from 'react';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 
 import AOS from 'aos';
 
-import 'react-lazy-load-image-component/src/effects/blur.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import 'react-image-lightbox/style.css';
 import 'aos/dist/aos.css';
 
 import getTheme from 'theme';
-import {useDarkMode} from 'hooks'
+import { useDarkMode } from 'hooks';
 import Layout from 'layout';
 
 interface Props {
-  children: React.ReactNode;
+  /* eslint-disable @typescript-eslint/no-explicit-any  */
+  Component: React.ComponentType<any>;
+  pageProps: any;
 }
 
-export default function App({ Component, pageProps }): JSX.Element {
+export default function App({ Component, pageProps }: Props): JSX.Element {
   useEffect(() => {
     // Remove the server-side injected CSS.
     const jssStyles = document.querySelector('#jss-server-side');
@@ -45,7 +46,7 @@ export default function App({ Component, pageProps }): JSX.Element {
       {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
       <CssBaseline />
       <Layout>
-      <Component {...pageProps} />
+        <Component {...pageProps} />
       </Layout>
     </ThemeProvider>
   );

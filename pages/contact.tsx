@@ -1,11 +1,10 @@
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+import Image from 'next/image';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
 
-import Container from 'components/Container';
 import ContactForm from 'components/ContactForm';
-import contactImage from 'assets/contact-image.jpg';
 
 const ContactPageCover = (): JSX.Element => {
   const theme = useTheme();
@@ -27,26 +26,15 @@ const ContactPageCover = (): JSX.Element => {
         height={1}
         width={1}
         sx={{
-          '& .lazy-load-image-loaded': {
-            height: 1,
-            width: 1,
-          },
+          overflow: 'hidden',
         }}
       >
-        <Box
-          component={LazyLoadImage}
-          height={1}
-          width={1}
-          src={contactImage}
-          alt="..."
-          effect="blur"
-          sx={{
-            objectFit: 'cover',
-            alignRight: 0,
-            '& .lazy-load-image-loaded': {
-              height: 1,
-            },
-          }}
+        <Image
+          height={2000}
+          width={500}
+          objectFit="cover"
+          src="/assets/contact-image.jpg"
+          alt="contact"
         />
       </Box>
     </Box>

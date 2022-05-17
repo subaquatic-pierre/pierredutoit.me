@@ -1,13 +1,12 @@
 import Typed from 'react-typed';
 import Image from 'next/image';
 
+import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { alpha, useTheme } from '@mui/material/styles';
-
-import Container from 'components/Container';
 
 const IndexHero = (): JSX.Element => {
   const theme = useTheme();

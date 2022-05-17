@@ -4,9 +4,8 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 import AppBar from '@mui/material/AppBar';
+import Container from '@mui/material/Container';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
-
-import Container from 'components/Container';
 
 import Topbar from 'components/Topbar';
 import Sidebar from 'components/Sidebar';
@@ -57,7 +56,7 @@ const Layout = ({
         }}
         elevation={trigger ? 1 : 0}
       >
-        <Container paddingY={1}>
+        <Container>
           <Topbar
             onSidebarOpen={handleSidebarOpen}
             pages={pages}
@@ -75,7 +74,7 @@ const Layout = ({
         {children}
         <Divider />
       </main>
-      <Container paddingY={4}>
+      <Container>
         <Footer />
       </Container>
     </Box>

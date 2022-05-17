@@ -5,8 +5,7 @@ import Button from '@mui/material/Button';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
-
-import Container from 'components/Container';
+import Container from '@mui/material/Container';
 
 const NotFound = (): JSX.Element => {
   const theme = useTheme();

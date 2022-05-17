@@ -14,7 +14,7 @@ const Features = (): JSX.Element => {
   });
 
   return (
-    <Box>
+    <Box my={10}>
       <Grid container spacing={4} direction={isMd ? 'row' : 'column-reverse'}>
         <Grid item xs={12} md={6} data-aos={isMd ? 'fade-right' : 'fade-up'}>
           <Box marginBottom={4}>

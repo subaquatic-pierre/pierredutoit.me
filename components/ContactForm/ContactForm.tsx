@@ -58,7 +58,14 @@ const Contact = (): JSX.Element => {
   });
 
   return (
-    <Box maxWidth={600} margin={'0 auto'}>
+    <Box
+      maxWidth={600}
+      margin={'0 auto'}
+      display="flex"
+      height="80vh"
+      flexDirection="column"
+      justifyContent="center"
+    >
       <Box marginBottom={4}>
         <Typography
           variant={'h3'}
