@@ -10,7 +10,7 @@ import Button from '@mui/material/Button';
 
 import { contactUrl } from 'const';
 import { handleSendEmail } from 'utils';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/router';
 
 const validationSchema = yup.object({
   name: yup
@@ -28,7 +28,7 @@ const validationSchema = yup.object({
 });
 
 const Contact = (): JSX.Element => {
-  const navigate = useNavigate();
+  const router = useRouter();
   const initialValues = {
     name: '',
     email: '',
@@ -38,20 +38,10 @@ const Contact = (): JSX.Element => {
   const onSubmit = (values) => {
     handleSendEmail(contactUrl, values)
       .then((res) => {
-        navigate('/', {
-          state: {
-            messages: [
-              'Thank you for your contact request, I will get back to you ASAP!',
-            ],
-          },
-        });
+        router.push('/');
       })
       .catch((err) => {
-        navigate('/contact', {
-          state: {
-            messages: ['There was an error!'],
-          },
-        });
+        router.push('/contact');
       });
   };
 
@@ -93,7 +83,9 @@ const Contact = (): JSX.Element => {
                 value={formik.values.name}
                 onChange={formik.handleChange}
                 error={formik.touched.name && Boolean(formik.errors.name)}
-                helperText={formik.touched.name && formik.errors.name}
+                helperText={
+                  formik.touched.name && (formik.errors.name as React.ReactNode)
+                }
               />
             </Grid>
 
@@ -110,7 +102,10 @@ const Contact = (): JSX.Element => {
                 value={formik.values.email}
                 onChange={formik.handleChange}
                 error={formik.touched.email && Boolean(formik.errors.email)}
-                helperText={formik.touched.email && formik.errors.email}
+                helperText={
+                  formik.touched.email &&
+                  (formik.errors.email as React.ReactNode)
+                }
               />
             </Grid>
             <Grid item xs={12}>
@@ -126,7 +121,10 @@ const Contact = (): JSX.Element => {
                 value={formik.values.message}
                 onChange={formik.handleChange}
                 error={formik.touched.message && Boolean(formik.errors.message)}
-                helperText={formik.touched.message && formik.errors.message}
+                helperText={
+                  formik.touched.message &&
+                  (formik.errors.message as React.ReactNode)
+                }
               />
             </Grid>
             <Grid item container justifyContent={'center'} xs={12}>
