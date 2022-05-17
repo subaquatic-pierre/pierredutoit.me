@@ -1,16 +1,18 @@
 /* eslint-disable react/no-unescaped-entities */
-import React from 'react';
+import { useRouter } from 'next/router';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
+
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 
+import { useNotify } from 'react-mui-notify';
+
 import { contactUrl } from 'const';
 import { handleSendEmail } from 'utils';
-import { useRouter } from 'next/router';
 
 const validationSchema = yup.object({
   name: yup
@@ -28,6 +30,7 @@ const validationSchema = yup.object({
 });
 
 const Contact = (): JSX.Element => {
+  const { setNotification } = useNotify();
   const router = useRouter();
   const initialValues = {
     name: '',
@@ -38,9 +41,12 @@ const Contact = (): JSX.Element => {
   const onSubmit = (values) => {
     handleSendEmail(contactUrl, values)
       .then((res) => {
+        console.log(setNotification);
+        // setNotification({ message: res.message, type: 'success' });
         router.push('/');
       })
       .catch((err) => {
+        setNotification({ message: err.message, type: 'error' });
         router.push('/contact');
       });
   };

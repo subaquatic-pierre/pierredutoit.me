@@ -1,4 +1,3 @@
-import React from 'react';
 import Box from '@mui/material/Box';
 import { SxProps, Theme } from '@mui/material/styles';
 
@@ -17,7 +16,12 @@ interface Props {
   [x: string]: any;
 }
 
-const Image = ({ src, imageProps = {}, style = {}, ...rest }: Props): JSX.Element => {
+const Image = ({
+  src,
+  imageProps = {},
+  style = {},
+  ...rest
+}: Props): JSX.Element => {
   return (
     <Box
       className={'image'}
