@@ -3,7 +3,7 @@ name: DevTests
 on:
   push:
     branches: [dev]
-    
+
   pull_request:
     branches: [dev]
 
@@ -24,5 +24,6 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
 
+      - run: run npm install
       - run: npm test
 
