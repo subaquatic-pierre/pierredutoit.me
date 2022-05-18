@@ -7,23 +7,19 @@ import AppBar from '@mui/material/AppBar';
 import Container from '@mui/material/Container';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 
+import pages from './navigation';
+
 import Topbar from 'components/Topbar';
 import Sidebar from 'components/Sidebar';
 import Footer from 'components/Footer';
-
-import pages from './navigation';
+import Head from 'components/Head';
 
 interface Props {
   children: React.ReactNode;
-  colorInvert?: boolean;
   bgcolor?: string;
 }
 
-const Layout = ({
-  children,
-  colorInvert = false,
-  bgcolor = 'transparent',
-}: Props): JSX.Element => {
+const Layout = ({ children, bgcolor = 'transparent' }: Props): JSX.Element => {
   const theme = useTheme();
   const isMd = useMediaQuery(theme.breakpoints.up('md'), {
     defaultMatches: true,
@@ -48,6 +44,7 @@ const Layout = ({
 
   return (
     <Box bgcolor={'background.paper'} sx={{ overflowX: 'hidden' }}>
+      <Head />
       <AppBar
         position="sticky"
         sx={{
