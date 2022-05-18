@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from 'components/Image';
 
 import { alpha, useTheme } from '@mui/material/styles';
 import { colors } from '@mui/material';

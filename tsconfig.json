@@ -15,11 +15,12 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "preserve",
-    "baseUrl": ".",
+    "baseUrl": "src",
     "incremental": true
   },
   "include": [
-    "@types/next-env.d.ts",
+    "src/@types/next-env.d.ts",
+    "**/*.d.ts",
     "**/*.ts",
     "**/*.tsx",
     "jest.setup.js",

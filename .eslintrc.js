@@ -33,5 +33,6 @@ module.exports = {
     semi: ['error', 'always'],
     'comma-dangle': ['error', 'only-multiline'],
     'react-hooks/exhaustive-deps': 'off',
+    '@next/next/no-img-element': 'off',
   },
 };

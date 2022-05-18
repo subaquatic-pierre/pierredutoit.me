@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from 'components/Image';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Box from '@mui/material/Box';

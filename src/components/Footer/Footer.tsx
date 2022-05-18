@@ -6,7 +6,7 @@ import { useTheme } from '@mui/material/styles';
 
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import Image from 'next/image';
+import Image from 'components/Image';
 
 const Footer = (): JSX.Element => {
   const theme = useTheme();
@@ -34,7 +34,7 @@ const Footer = (): JSX.Element => {
               },
             }}
           >
-            <Image alt="Logo" src="/assets/Logo.svg" height={300} width={300} />
+            <Image alt="Logo" src="/assets/Logo.svg" height={150} width={150} />
           </Box>
           <Box display="flex" flexWrap={'wrap'} alignItems={'center'}>
             <Box marginTop={1} marginRight={2}>

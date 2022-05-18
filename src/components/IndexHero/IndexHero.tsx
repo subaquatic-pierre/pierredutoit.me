@@ -1,5 +1,5 @@
 import Typed from 'react-typed';
-import Image from 'next/image';
+import Image from 'components/Image';
 
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';

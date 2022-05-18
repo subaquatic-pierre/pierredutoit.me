@@ -5,7 +5,7 @@ import Box from '@mui/material/Box';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
-import Image from 'next/image';
+import Image from 'components/Image';
 
 const Features = (): JSX.Element => {
   const theme = useTheme();
@@ -48,6 +48,7 @@ const Features = (): JSX.Element => {
             alt="Profile picture"
             style={{
               borderRadius: '10px',
+              objectFit: 'cover',
             }}
           />
         </Grid>

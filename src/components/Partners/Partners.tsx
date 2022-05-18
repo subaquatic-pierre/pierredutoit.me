@@ -1,6 +1,6 @@
 import Box from '@mui/material/Box';
 import { useTheme } from '@mui/material/styles';
-import Image from 'next/image';
+import Image from 'components/Image';
 
 const images = [
   '/assets/svg/react-2.svg',
@@ -30,8 +30,8 @@ const Partners = (): JSX.Element => {
           key={i}
         >
           <Image
-            height={100}
-            width={100}
+            height={40}
+            width={40}
             src={item}
             alt="..."
             style={{

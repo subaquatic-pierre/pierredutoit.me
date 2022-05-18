@@ -57,11 +57,7 @@ const Layout = ({
         elevation={trigger ? 1 : 0}
       >
         <Container>
-          <Topbar
-            onSidebarOpen={handleSidebarOpen}
-            pages={pages}
-            colorInvert={trigger ? false : colorInvert}
-          />
+          <Topbar onSidebarOpen={handleSidebarOpen} pages={pages} />
         </Container>
       </AppBar>
       <Sidebar

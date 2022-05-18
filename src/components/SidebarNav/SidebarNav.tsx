@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from 'components/Image';
 
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';

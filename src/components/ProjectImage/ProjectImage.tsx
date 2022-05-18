@@ -1,5 +1,5 @@
 import Box from '@mui/material/Box';
-import Image from 'next/image';
+import Image from 'components/Image';
 
 interface Props {
   project: Project;
@@ -15,7 +15,6 @@ const ProjectImage = ({ project }: Props): JSX.Element => {
       <Image
         alt={project.title}
         src={project.screenshot}
-        title={project.title}
         height={340}
         width={400}
         objectFit="cover"

@@ -5,7 +5,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 import NavItem from 'components/NavItem';
 import ThemeModeToggler from 'components/ThemeModeToggler';
-import Image from 'next/image';
+import Image from 'components/Image';
 
 interface Props {
   // eslint-disable-next-line @typescript-eslint/ban-types
@@ -40,7 +40,7 @@ const Topbar = ({ onSidebarOpen, pages }: Props): JSX.Element => {
           },
         }}
       >
-        <Image alt="logo" src="/assets/Logo.svg" height={300} width={300} />
+        <Image alt="logo" src="/assets/Logo.svg" height={150} width={150} />
       </Box>
       <Box
         sx={{
