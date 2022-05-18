@@ -41,8 +41,11 @@ const Contact = (): JSX.Element => {
   const onSubmit = (values) => {
     handleSendEmail(contactUrl, values)
       .then((res) => {
-        console.log(setNotification);
-        // setNotification({ message: res.message, type: 'success' });
+        setNotification({
+          message: 'Thank you for you message!',
+          type: 'success',
+        });
+
         router.push('/');
       })
       .catch((err) => {

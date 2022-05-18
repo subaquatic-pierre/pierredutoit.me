@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
+
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 
+import { NotificationProvider } from 'react-mui-notify';
+
 import AOS from 'aos';
 
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import 'react-image-lightbox/style.css';
 import 'aos/dist/aos.css';
 
 import getTheme from 'theme';
@@ -43,11 +43,12 @@ export default function App({ Component, pageProps }: Props): JSX.Element {
 
   return (
     <ThemeProvider theme={getTheme(themeMode, themeToggler)}>
-      {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
       <CssBaseline />
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <NotificationProvider config={{ duration: 10000 }}>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </NotificationProvider>
     </ThemeProvider>
   );
 }

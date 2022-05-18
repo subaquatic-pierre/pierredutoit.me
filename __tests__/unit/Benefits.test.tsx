@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Benefits from '../components/Benefits';
+import Benefits from 'components/Benefits';
 
 describe('Main component test', () => {
   it('render component without errors', () => {
