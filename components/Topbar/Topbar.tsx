@@ -13,14 +13,9 @@ interface Props {
   pages: {
     main: Array<PageItem>;
   };
-  colorInvert?: boolean;
 }
 
-const Topbar = ({
-  onSidebarOpen,
-  pages,
-  colorInvert = false,
-}: Props): JSX.Element => {
+const Topbar = ({ onSidebarOpen, pages }: Props): JSX.Element => {
   const theme = useTheme();
   const { mode } = theme.palette;
   const { main } = pages;
@@ -45,7 +40,7 @@ const Topbar = ({
           },
         }}
       >
-        <Image src="/assets/Logo.svg" height={300} width={300} />
+        <Image alt="logo" src="/assets/Logo.svg" height={300} width={300} />
       </Box>
       <Box
         sx={{

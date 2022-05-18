@@ -13,6 +13,7 @@ const ProjectImage = ({ project }: Props): JSX.Element => {
       target="blank"
     >
       <Image
+        alt={project.title}
         src={project.screenshot}
         title={project.title}
         height={340}

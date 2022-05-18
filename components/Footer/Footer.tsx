@@ -34,7 +34,7 @@ const Footer = (): JSX.Element => {
               },
             }}
           >
-            <Image src="/assets/Logo.svg" height={300} width={300} />
+            <Image alt="Logo" src="/assets/Logo.svg" height={300} width={300} />
           </Box>
           <Box display="flex" flexWrap={'wrap'} alignItems={'center'}>
             <Box marginTop={1} marginRight={2}>

@@ -40,7 +40,7 @@ const Contact = (): JSX.Element => {
 
   const onSubmit = (values) => {
     handleSendEmail(contactUrl, values)
-      .then((res) => {
+      .then(() => {
         setNotification({
           message: 'Thank you for you message!',
           type: 'success',

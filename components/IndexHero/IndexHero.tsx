@@ -113,7 +113,12 @@ const IndexHero = (): JSX.Element => {
           }}
         >
           <Box display={'flex'} left={'54%'} top={100} position={'absolute'}>
-            <Image height={500} width={500} src="/assets/Launch.svg" />
+            <Image
+              alt="Launch Art"
+              height={500}
+              width={500}
+              src="/assets/Launch.svg"
+            />
           </Box>
         </Box>
       </Box>

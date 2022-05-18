@@ -9,7 +9,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
-const mock = [
+const solutions = [
   {
     title: 'Modern UI / UX',
     description:
@@ -77,7 +77,7 @@ const Solutions = (): JSX.Element => {
         </Typography>
       </Box>
       <Grid container spacing={isMd ? 8 : 4}>
-        {mock.map((item, i) => (
+        {solutions.map((item, i) => (
           <Grid
             key={i}
             item
@@ -106,7 +106,12 @@ const Solutions = (): JSX.Element => {
                     md: 4,
                   }}
                 >
-                  <Image height={300} width={300} src={item.illustration} />
+                  <Image
+                    height={300}
+                    width={300}
+                    src={item.illustration}
+                    alt={item.title}
+                  />
                 </Box>
                 <Box
                   sx={{

@@ -45,6 +45,7 @@ const Features = (): JSX.Element => {
             width={400}
             objectFit="cover"
             src="/assets/profile-pic.jpg"
+            alt="Profile picture"
             style={{
               borderRadius: '10px',
             }}

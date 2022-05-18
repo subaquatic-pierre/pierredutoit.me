@@ -20,21 +20,23 @@ const SidebarNav = ({ pages }: Props): JSX.Element => {
     <Box>
       <Box width={1} paddingX={2} paddingY={1}>
         <Box
-          display={'flex'}
+          display="flex"
           component="a"
           href="/"
           title="Pierre du Toit"
           width={{ xs: 100, md: 120 }}
           mt={2}
+          sx={{ marginLeft: 'auto', marginRight: 'auto' }}
         >
           <Image
+            alt="Logo"
             src={
               mode === 'light'
                 ? '/assets/Logo-dark.png'
                 : '/assets/Logo-light.png'
             }
-            height={10}
-            width={10}
+            height={18}
+            width={100}
           />
         </Box>
       </Box>

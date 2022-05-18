@@ -10,11 +10,11 @@ module.exports = {
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:react/jsx-runtime',
-    // 'next/core-web-vitals'
+    'next/core-web-vitals',
   ],
   settings: {
     react: {
-      version: 'latest',
+      version: 'detect',
     },
   },
   parser: '@typescript-eslint/parser',
@@ -32,5 +32,6 @@ module.exports = {
     quotes: ['error', 'single'],
     semi: ['error', 'always'],
     'comma-dangle': ['error', 'only-multiline'],
+    'react-hooks/exhaustive-deps': 'off',
   },
 };
