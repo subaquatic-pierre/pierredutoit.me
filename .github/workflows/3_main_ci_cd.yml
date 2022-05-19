@@ -46,13 +46,8 @@ jobs:
 
       # Deploy to bucket
       - name: Deploy to Bucket
-        run: |
-          aws s3 cp build/ s3://$MAIN_S3_BUCKET_ID/ --recursive
-        working-directory: ./app
+        run: npm run deploy
 
       # Invalidate Cloudfront
       - name: Invalidate Cloudfront to Bucket
-        run: |
-          aws cloudfront create-invalidation \
-            --distribution-id $MAIN_CLOUDFRONT_DISTRIBUTION_ID \
-            --paths "/"
+        run: npm run invalidate

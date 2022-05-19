@@ -46,7 +46,9 @@
     "@typescript-eslint/parser": "^5.7.0",
     "babel-eslint": "^10.1.0",
     "babel-plugin-styled-components": "^2.0.2",
-    "cross-env": "^7.0.2",
+    "cross-var": "^1.1.0",
+    "dotenv": "^16.0.1",
+    "dotenv-cli": "^5.1.0",
     "eslint": "8.15.0",
     "eslint-config-next": "12.1.6",
     "eslint-config-react-app": "^7.0.0",
@@ -75,8 +77,10 @@
     "test": "jest",
     "test:ci": "jest --ci",
     "build-lambda": "webpack --config webpack.config.js --mode production",
-    "deploy": "aws s3 cp --recursive build/ $BUCKET",
-    "invalidate": "aws cloudfront create-invalidation --distribution-id $DISTID --paths \"/*\""
+    "deploy": "aws s3 cp build/ s3://$MAIN_S3_BUCKET_ID/ --recursive",
+    "invalidate": "aws cloudfront create-invalidation --distribution-id $MAIN_CLOUDFRONT_DISTRIBUTION_ID --paths \"/*\"",
+    "deploy:local": "dotenv cross-var aws s3 cp build/ s3://%MAIN_S3_BUCKET_ID%/ --recursive",
+    "invalidate:local": "cross-env aws cloudfront create-invalidation --distribution-id $MAIN_CLOUDFRONT_DISTRIBUTION_ID --paths \"/*\""
   },
   "eslintConfig": {
     "extends": [
