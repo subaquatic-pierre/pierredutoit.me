@@ -43,8 +43,8 @@ jobs:
 
       # Deploy to bucket
       - name: Deploy to Bucket
-        run: npm run deploy
+        run: npm run deploy:staging
 
       # Invalidate Cloudfront
       - name: Invalidate Cloudfront to Bucket
-        run: npm run invalidate
+        run: npm run invalidate:staging
