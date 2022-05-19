@@ -79,9 +79,7 @@
     "build-lambda": "webpack --config webpack.config.js --mode production",
     "deploy": "aws s3 cp build/ s3://$MAIN_S3_BUCKET_ID/ --recursive",
     "invalidate": "aws cloudfront create-invalidation --distribution-id $MAIN_CLOUDFRONT_DISTRIBUTION_ID --paths \"/*\"",
-    "deploy:staging": "dotenv cross-var aws s3 cp build/ s3://%STAGIN_S3_BUCKET_ID%/ --recursive",
-    "invalidate:staging": "dotenv cross-var aws cloudfront create-invalidation ,--distribution-id $STAGIN_CLOUDFRONT_DISTRIBUTION_ID --paths \"/*\"",
-    "deploy:dev": "dotenv cross-var aws s3 cp build/ s3://%MAIN_S3_BUCKET_ID%/ --recursive",
+    "deploy:staging": "scripts/staging-deploy",
     "invalidate:dev": "dotenv cross-var aws cloudfront create-invalidation --distribution-id $MAIN_CLOUDFRONT_DISTRIBUTION_ID --paths \"/*\"",
     "dotenvtest": "dotenv cross-var echo %TEST%"
   },
