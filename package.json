@@ -14,7 +14,6 @@
     "file-loader": "^6.2.0",
     "formik": "^2.2.6",
     "ignore-loader": "^0.1.2",
-    "imagemin-svgo": "^10.0.1",
     "img-loader": "^4.0.0",
     "jarallax": "^1.12.8",
     "next": "12.1.6",
@@ -46,9 +45,6 @@
     "@typescript-eslint/parser": "^5.7.0",
     "babel-eslint": "^10.1.0",
     "babel-plugin-styled-components": "^2.0.2",
-    "cross-var": "^1.1.0",
-    "dotenv": "^16.0.1",
-    "dotenv-cli": "^5.1.0",
     "eslint": "8.15.0",
     "eslint-config-next": "12.1.6",
     "eslint-config-react-app": "^7.0.0",
@@ -76,12 +72,8 @@
     "lint": "next lint",
     "test": "jest",
     "test:ci": "jest --ci",
-    "build-lambda": "webpack --config webpack.config.js --mode production",
-    "deploy": "aws s3 cp build/ s3://$MAIN_S3_BUCKET_ID/ --recursive",
-    "invalidate": "aws cloudfront create-invalidation --distribution-id $MAIN_CLOUDFRONT_DISTRIBUTION_ID --paths \"/*\"",
-    "deploy:staging": "scripts/staging-deploy",
-    "invalidate:dev": "dotenv cross-var aws cloudfront create-invalidation --distribution-id $MAIN_CLOUDFRONT_DISTRIBUTION_ID --paths \"/*\"",
-    "dotenvtest": "dotenv cross-var echo %TEST%"
+    "deploy": "bash scripts/deploy.sh",
+    "deploy:staging": "bash scripts/staging-deploy.sh"
   },
   "eslintConfig": {
     "extends": [

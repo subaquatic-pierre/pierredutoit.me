@@ -42,9 +42,9 @@ jobs:
           aws configure set default.region $AWS_REGION
 
       # Deploy to bucket
-      - name: Deploy to Bucket
+      - name: Deploy to Staging Bucket
         run: npm run deploy:staging
 
       # Invalidate Cloudfront
-      - name: Invalidate Cloudfront to Bucket
+      - name: Invalidate Staging Cloudfront
         run: npm run invalidate:staging
