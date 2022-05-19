@@ -24,17 +24,14 @@ jobs:
       # Run install
       - name: Run Install
         run: npm install
-        working-directory: ./app
 
       # Run Tests
       - name: Run Tests
         run: npm test
-        working-directory: ./app
 
       # Build App
       - name: Build App
         run: npm run build
-        working-directory: ./app
 
       # Configure AWS
       - name: Configure AWS
@@ -45,9 +42,9 @@ jobs:
           aws configure set default.region $AWS_REGION
 
       # Deploy to bucket
-      - name: Deploy to Bucket
+      - name: Deploy to Main Bucket
         run: npm run deploy
 
       # Invalidate Cloudfront
-      - name: Invalidate Cloudfront to Bucket
+      - name: Invalidate Main Cloudfront
         run: npm run invalidate
