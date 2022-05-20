@@ -1,3 +1,4 @@
+import React from 'react';
 import Typed from 'react-typed';
 import Image from 'components/Image';
 

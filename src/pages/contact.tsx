@@ -1,3 +1,4 @@
+import React from 'react';
 import Image from 'components/Image';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';

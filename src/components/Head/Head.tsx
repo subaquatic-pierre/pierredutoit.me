@@ -1,8 +1,9 @@
-import Head from 'next/head';
+import React from 'react';
+import { Helmet } from 'react-helmet';
 
 const SiteHead = (): JSX.Element => {
   return (
-    <Head>
+    <Helmet>
       <link rel="icon" href="/assets/favicon.ico" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="theme-color" content="#000000" />
@@ -43,7 +44,7 @@ const SiteHead = (): JSX.Element => {
         name="twitter:image"
         content="https://pierredutoit.me/assets/Launch.png"
       />
-    </Head>
+    </Helmet>
   );
 };
 

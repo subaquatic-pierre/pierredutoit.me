@@ -3,8 +3,6 @@ import React, { useEffect } from 'react';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 
-import { NotificationProvider } from 'react-mui-notify';
-
 import AOS from 'aos';
 
 import 'aos/dist/aos.css';

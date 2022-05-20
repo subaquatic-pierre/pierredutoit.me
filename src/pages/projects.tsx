@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState, useEffect } from 'react';
 import { Octokit } from '@octokit/core';
 import Container from '@mui/material/Container';
@@ -8,6 +9,7 @@ import Partners from 'components/Partners';
 import PortfolioPlaceholder from 'components/PortfolioPlaceholder';
 
 import { githubUsername } from 'const';
+
 const githubToken = process.env.REACT_APP_FOO;
 
 const Projects = (): JSX.Element => {

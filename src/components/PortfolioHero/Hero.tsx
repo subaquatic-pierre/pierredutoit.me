@@ -1,3 +1,4 @@
+import React from 'react';
 import Typed from 'react-typed';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';

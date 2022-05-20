@@ -1,3 +1,4 @@
+import React from 'react';
 import Image from 'components/Image';
 
 import Box from '@mui/material/Box';

@@ -1,18 +1,15 @@
-// @ts-nocheck
-
 import type { GatsbyConfig } from 'gatsby';
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `Pierre du Toit`,
-    siteUrl: `https://pierredutoit.me`,
+    title: 'Pierre du Toit',
+    siteUrl: 'https://pierredutoit.me',
   },
   plugins: [
     'gatsby-plugin-image',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-top-layout',
-    'gatsby-plugin-mdx',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-plugin-mui-emotion',

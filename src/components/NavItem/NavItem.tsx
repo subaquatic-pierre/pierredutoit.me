@@ -1,4 +1,6 @@
-import { useRouter } from 'next/router';
+import React from 'react';
+import { useLocation } from '@reach/router';
+
 import { useTheme } from '@mui/material/styles';
 
 import Box from '@mui/material/Box';
@@ -12,7 +14,7 @@ interface Props {
 }
 
 const NavItem = ({ item }: Props) => {
-  const router = useRouter();
+  const location = useLocation();
   const theme = useTheme();
   const { mode } = theme.palette;
 
@@ -31,7 +33,7 @@ const NavItem = ({ item }: Props) => {
             backgroundColor: mode === 'light' ? 'GrayText' : 'white',
             bottom: -5,
             left: 0,
-            transform: router.asPath !== item.href && 'scaleX(0)',
+            transform: location.pathname !== item.href && 'scaleX(0)',
             transformOrigin: 'bottom right',
             borderRadius: '2px',
           },
@@ -50,7 +52,7 @@ const NavItem = ({ item }: Props) => {
         variant="h6"
         sx={{
           position: 'relative',
-          fontWeight: router.asPath === item.href && 600,
+          fontWeight: location.pathname === item.href && 600,
         }}
       >
         {item.title}

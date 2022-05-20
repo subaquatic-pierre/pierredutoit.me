@@ -1,7 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
-import { useRouter } from 'next/router';
+import React from 'react';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
+import { navigate } from 'gatsby';
 
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -9,10 +10,13 @@ import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 
-import { useNotify } from 'react-mui-notify';
+// import { useNotify } from 'react-mui-notify';
 
-import { contactUrl } from 'const';
 import { handleSendEmail } from 'utils';
+
+const githubToken = process.env.REACT_APP_FOO;
+export const contactUrl =
+  'https://06hwq9qq89.execute-api.us-east-1.amazonaws.com/prod/contact-me';
 
 const validationSchema = yup.object({
   name: yup
@@ -30,8 +34,7 @@ const validationSchema = yup.object({
 });
 
 const Contact = (): JSX.Element => {
-  const { setNotification } = useNotify();
-  const router = useRouter();
+  // const { setNotification } = useNotify();
   const initialValues = {
     name: '',
     email: '',
@@ -41,16 +44,16 @@ const Contact = (): JSX.Element => {
   const onSubmit = (values) => {
     handleSendEmail(contactUrl, values)
       .then(() => {
-        setNotification({
-          message: 'Thank you for you message!',
-          type: 'success',
-        });
+        // setNotification({
+        //   message: 'Thank you for you message!',
+        //   type: 'success',
+        // });
 
-        router.push('/');
+        navigate('/');
       })
       .catch((err) => {
-        setNotification({ message: err.message, type: 'error' });
-        router.push('/contact');
+        // setNotification({ message: err.message, type: 'error' });
+        navigate('/contact');
       });
   };
 
