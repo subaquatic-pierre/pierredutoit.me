@@ -16,7 +16,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-export function TopLayout({ children }: Props): JSX.Element {
+export default function TopLayout({ children }: Props): JSX.Element {
   React.useEffect(() => {
     // Remove the server-side injected CSS.
     const jssStyles = document.querySelector('#jss-server-side');

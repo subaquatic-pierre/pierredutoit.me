@@ -1,4 +1,9 @@
 import type { GatsbyConfig } from 'gatsby';
+import dotenv from 'dotenv';
+
+dotenv.config({
+  path: '.env',
+});
 
 const config: GatsbyConfig = {
   siteMetadata: {
@@ -13,6 +18,7 @@ const config: GatsbyConfig = {
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-plugin-mui-emotion',
+    'gatsby-plugin-root-import',
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
@@ -32,7 +38,7 @@ const config: GatsbyConfig = {
         name: 'images',
         path: './src/images/',
       },
-      __key: 'images',
+      // __key: 'images',
     },
     {
       resolve: 'gatsby-source-filesystem',
@@ -40,7 +46,7 @@ const config: GatsbyConfig = {
         name: 'pages',
         path: './src/pages/',
       },
-      __key: 'pages',
+      // __key: 'pages',
     },
   ],
 };

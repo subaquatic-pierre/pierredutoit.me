@@ -1,6 +1,4 @@
 import React from 'react';
-import { useLocation } from '@reach/router';
-
 import { useTheme } from '@mui/material/styles';
 
 import Box from '@mui/material/Box';
@@ -14,7 +12,10 @@ interface Props {
 }
 
 const NavItem = ({ item }: Props) => {
-  const location = useLocation();
+  const url = typeof window !== 'undefined' ? window.location.href : '';
+  const location = {
+    pathname: '/' + url.split('/')[url.split('/').length - 1],
+  };
   const theme = useTheme();
   const { mode } = theme.palette;
 

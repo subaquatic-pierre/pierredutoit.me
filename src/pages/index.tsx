@@ -10,6 +10,8 @@ import Benefits from 'components/Benefits';
 import IndexHero from 'components/IndexHero';
 
 const IndexView = (): JSX.Element => {
+  const githubToken = process.env.GATSBY_GITHUB_TOKEN;
+  console.log(githubToken);
   const theme = useTheme();
   return (
     <>

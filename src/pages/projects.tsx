@@ -10,26 +10,29 @@ import PortfolioPlaceholder from 'components/PortfolioPlaceholder';
 
 import { githubUsername } from 'const';
 
-const githubToken = process.env.REACT_APP_FOO;
-
 const Projects = (): JSX.Element => {
   const [allProjects, setAllProjects] = useState<ProjectMetaData[]>([]);
   const [projectsLoaded, setProjectsLoaded] = useState(false);
+  const githubToken = process.env.GATSBY_GITHUB_TOKEN;
 
   const octokit = new Octokit({ auth: githubToken });
 
   const getProjects = async () => {
-    const response = await octokit.request(
-      `GET /repos/${githubUsername}/projects/contents/index.json`,
-    );
+    try {
+      const response = await octokit.request(
+        `GET /repos/${githubUsername}/projects/contents/index.json`,
+      );
 
-    const { content } = response.data;
+      const { content } = response.data;
 
-    // Decode base64 string
-    const encoded = atob(content);
-    const projects = JSON.parse(encoded);
-    setAllProjects(projects);
-    setProjectsLoaded(true);
+      // Decode base64 string
+      const encoded = atob(content);
+      const projects = JSON.parse(encoded);
+      setAllProjects(projects);
+      setProjectsLoaded(true);
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   useEffect(() => {
