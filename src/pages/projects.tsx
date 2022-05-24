@@ -9,15 +9,14 @@ import PortfolioPlaceholder from 'components/PortfolioPlaceholder';
 
 import { githubUsername } from 'const';
 
-import { useOctokit } from 'gatsby-plugin-octokit';
+import { useOctokit } from '../../plugins/gatsby-plugin-octokit';
 
 const Projects = (): JSX.Element => {
   const [allProjects, setAllProjects] = useState<ProjectMetaData[]>([]);
   const [projectsLoaded, setProjectsLoaded] = useState(false);
-  const githubToken = process.env.GATSBY_GITHUB_TOKEN;
+  const octokit = useOctokit();
 
   const getProjects = async () => {
-    const octokit = useOctokit();
     try {
       const response = await octokit.request(
         `GET /repos/${githubUsername}/projects/contents/index.json`,

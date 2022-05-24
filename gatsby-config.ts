@@ -21,7 +21,7 @@ const config: GatsbyConfig = {
     'gatsby-plugin-root-import',
     {
       resolve: 'gatsby-plugin-octokit',
-      options: { message: 'Hello world' },
+      options: { githubToken: process.env.GITHUB_TOKEN },
     },
     {
       resolve: 'gatsby-plugin-google-analytics',
