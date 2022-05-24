@@ -11,10 +11,10 @@ infrastructure
 # testing
 /coverage
 
-/public
 
 # production
-/build
+public
+build
 
 # misc
 .DS_Store
