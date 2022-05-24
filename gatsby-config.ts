@@ -20,10 +20,6 @@ const config: GatsbyConfig = {
     'gatsby-plugin-mui-emotion',
     'gatsby-plugin-root-import',
     {
-      resolve: 'gatsby-plugin-octokit',
-      options: { githubToken: process.env.GITHUB_TOKEN },
-    },
-    {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
         trackingId: 'cvcvcv',
@@ -51,6 +47,10 @@ const config: GatsbyConfig = {
         path: './src/pages/',
       },
       // __key: 'pages',
+    },
+    {
+      resolve: 'gatsby-plugin-octokit',
+      options: { githubToken: process.env.GITHUB_TOKEN },
     },
   ],
 };

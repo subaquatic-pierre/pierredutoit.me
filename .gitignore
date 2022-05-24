@@ -11,6 +11,8 @@ infrastructure
 # testing
 /coverage
 
+/public
+
 # production
 /build
 

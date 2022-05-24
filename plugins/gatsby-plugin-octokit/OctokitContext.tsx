@@ -5,8 +5,9 @@ export const OctokitContext = React.createContext(undefined);
 
 interface Props {
   children: React.ReactNode;
-  /* eslint-disable @typescript-eslint/no-explicit-any*/
-  pluginOptions: any;
+  pluginOptions: {
+    githubToken: string;
+  };
 }
 
 export default function OctokitProvider({ children, pluginOptions }: Props) {
