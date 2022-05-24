@@ -1,6 +1,5 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { Octokit } from '@octokit/core';
 import Container from '@mui/material/Container';
 
 import PortfolioHero from 'components/PortfolioHero';
@@ -10,14 +9,15 @@ import PortfolioPlaceholder from 'components/PortfolioPlaceholder';
 
 import { githubUsername } from 'const';
 
+import { useOctokit } from 'gatsby-plugin-octokit';
+
 const Projects = (): JSX.Element => {
   const [allProjects, setAllProjects] = useState<ProjectMetaData[]>([]);
   const [projectsLoaded, setProjectsLoaded] = useState(false);
   const githubToken = process.env.GATSBY_GITHUB_TOKEN;
 
-  const octokit = new Octokit({ auth: githubToken });
-
   const getProjects = async () => {
+    const octokit = useOctokit();
     try {
       const response = await octokit.request(
         `GET /repos/${githubUsername}/projects/contents/index.json`,

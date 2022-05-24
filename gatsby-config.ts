@@ -20,6 +20,10 @@ const config: GatsbyConfig = {
     'gatsby-plugin-mui-emotion',
     'gatsby-plugin-root-import',
     {
+      resolve: 'gatsby-plugin-octokit',
+      options: { message: 'Hello world' },
+    },
+    {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
         trackingId: 'cvcvcv',
