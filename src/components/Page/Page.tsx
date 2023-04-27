@@ -6,7 +6,7 @@ import getTheme from 'theme';
 import AOS from 'aos';
 
 export const useDarkMode = (): [string, () => void, boolean] => {
-  const [themeMode, setTheme] = useState('light');
+  const [themeMode, setTheme] = useState('dark');
   const [mountedComponent, setMountedComponent] = useState(false);
 
   const setMode = (mode: string) => {

@@ -13,9 +13,9 @@ const Hero = (): JSX.Element => {
           color="text.secondary"
           align={'center'}
           gutterBottom
-          sx={{ fontWeight: 400 }}
+          sx={{ fontWeight: 400, minHeight: 30 }}
         >
-          Turning project objectives into deliverables.
+          Transforming ideas into cutting-edge solutions.
         </Typography>
         <Typography
           variant="h3"
@@ -25,12 +25,11 @@ const Hero = (): JSX.Element => {
             fontWeight: 700,
           }}
         >
-          I{' '}
           <Typed
             strings={[
-              'design and develop web apps',
-              'plan and deploy cloud infrastructure',
-              'do continues deployment',
+              'designing and develop web apps',
+              'cloud infrastructure, architecture and development',
+              'continuous development and deployment',
             ]}
             typeSpeed={100}
             loop={true}

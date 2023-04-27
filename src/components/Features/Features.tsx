@@ -53,11 +53,25 @@ const Features = (): JSX.Element => {
             <Typography sx={{ fontWeight: 700 }} variant={'h4'} gutterBottom>
               A full stack web developer
             </Typography>
+            <Typography
+              variant={'h6'}
+              component={'p'}
+              color={'text.secondary'}
+              paragraph
+            >
+              As a leading-edge software developer, I am passionate about
+              pushing the boundaries of innovation and creating exceptional
+              software solutions. I believe that the power of technology can
+              transform the way we work, live, and interact with the world.
+            </Typography>
             <Typography variant={'h6'} component={'p'} color={'text.secondary'}>
-              I'm from South Africa 🇿🇦, currently living in the UAE 🇦🇪. I have a
-              passion for creating reliable, secure and efficient web apps. I
-              enjoy designing and developing user friendly UI's connected to
-              powerful API's.
+              With a keen eye for detail and a commitment to excellence, I turn
+              ideas into reality by leveraging the latest tools, techniques, and
+              technologies. Whether it's developing custom software
+              applications, optimizing business processes, or improving user
+              experiences, I am dedicated to delivering solutions that exceed
+              expectations. Trust me to bring your vision to life with my
+              expertise in software development.
             </Typography>
           </Box>
         </Grid>

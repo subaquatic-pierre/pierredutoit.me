@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import { alpha, useTheme } from '@mui/material/styles';
@@ -26,6 +26,10 @@ const Topbar = ({
   const theme = useTheme();
   const { mode } = theme.palette;
   const { main } = pages;
+
+  useEffect(() => {
+    console.log({ themeMode: mode });
+  }, [mode]);
 
   return (
     <Box

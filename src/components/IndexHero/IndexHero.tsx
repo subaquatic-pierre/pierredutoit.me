@@ -37,6 +37,7 @@ const IndexHero = (): JSX.Element => {
               gutterBottom
               sx={{
                 fontWeight: 700,
+                minHeight: 250,
               }}
             >
               Hey there! 👋
@@ -56,9 +57,9 @@ const IndexHero = (): JSX.Element => {
               >
                 <Typed
                   strings={[
-                    'software engineer.',
-                    'cloud architect.',
-                    'blockchain developer.',
+                    'software engineer',
+                    'cloud architect',
+                    'blockchain developer',
                   ]}
                   typeSpeed={80}
                   loop={true}
@@ -70,10 +71,26 @@ const IndexHero = (): JSX.Element => {
               component="p"
               color="text.secondary"
               sx={{ fontWeight: 400 }}
+              paragraph
             >
-              I am a self-taught software engineer with a passion for anything
-              web. I turn business objectives into deliverables, check out my
-              latest projects or get in touch with me.
+              As a skilled software web application developer with a focus on
+              cloud computing, I specialize in creating exceptional digital
+              experiences that transform the way people interact with
+              technology.
+              {/* With my in-depth knowledge of cloud-based
+              technologies, tools, and approaches, I&apos;m dedicated to
+              delivering solutions that exceed expectations. */}
+            </Typography>
+            <Typography
+              variant="h6"
+              component="p"
+              color="text.secondary"
+              sx={{ fontWeight: 400 }}
+            >
+              From developing custom web applications to optimizing user
+              experiences and integrating third-party services, my attention to
+              detail and dedication to excellence ensure that every project I
+              work on is of the highest quality.
             </Typography>
             <Box
               display="flex"
