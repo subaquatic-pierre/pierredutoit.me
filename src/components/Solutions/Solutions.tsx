@@ -9,10 +9,10 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { alpha, useTheme } from '@mui/material/styles';
 import { colors } from '@mui/material';
 
-import blockChain from 'assets//solutions/Augmented.svg';
-import api from 'assets//solutions/Visual.svg';
-import ui from 'assets//solutions/Messaging.svg';
-import cloud from 'assets//solutions/Data.svg';
+import blockChain from 'assets/solutions/Augmented.svg';
+import api from 'assets/solutions/Visual.svg';
+import ui from 'assets/solutions/Messaging.svg';
+import cloud from 'assets/solutions/Data.svg';
 
 const mock = [
   {
@@ -120,8 +120,8 @@ const Solutions = (): JSX.Element => {
                   }}
                 >
                   <Box
-                    component={LazyLoadImage}
-                    effect="blur"
+                    component="img"
+                    // effect="blur"
                     src={item.illustration}
                     width={1}
                   />
