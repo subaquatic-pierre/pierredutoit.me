@@ -17,8 +17,7 @@ import CardSkeleton from 'components/CardSkeleton';
 
 import projectPlaceholderImg from 'assets/project-placeholder.jpg';
 
-import { githubUsername } from 'const';
-
+const githubUsername = process.env.GITHUB_USERNAME;
 const githubToken = process.env.REACT_APP_GIT_AUTH_TOKEN;
 
 const blankProject: Project = {

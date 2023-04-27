@@ -13,7 +13,7 @@ const Hero = (): JSX.Element => {
           color="text.secondary"
           align={'center'}
           gutterBottom
-          sx={{ fontWeight: 400, minHeight: 30 }}
+          sx={{ fontWeight: 400, mb: 2 }}
         >
           Transforming ideas into cutting-edge solutions.
         </Typography>
@@ -22,20 +22,21 @@ const Hero = (): JSX.Element => {
           color="text.primary"
           align={'center'}
           sx={{
-            fontWeight: 700,
+            fontWeight: 700
           }}
         >
-          <Typed
+          Digital Showcase
+          {/* <Typed
             strings={[
               'designing and develop web apps',
               'cloud infrastructure, architecture and development',
-              'continuous development and deployment',
+              'continuous development and deployment'
             ]}
             typeSpeed={100}
             loop={true}
             backSpeed={50}
             backDelay={1500}
-          />
+          /> */}
         </Typography>
       </Box>
     </Box>

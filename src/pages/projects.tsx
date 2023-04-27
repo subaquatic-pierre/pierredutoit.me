@@ -12,8 +12,8 @@ import PortfolioMain from 'components/PortfolioMain';
 import Partners from 'components/Partners';
 import PortfolioPlaceholder from 'components/PortfolioPlaceholder';
 
-import { githubUsername } from 'const';
-const githubToken = process.env.REACT_APP_GIT_AUTH_TOKEN;
+const githubUsername = process.env.GITHUB_USERNAME;
+const githubToken = process.env.GIT_AUTH_TOKEN;
 
 const ProjectPage: React.FC<PageProps> = () => {
   const [allProjects, setAllProjects] = React.useState<ProjectMetaData[]>([]);

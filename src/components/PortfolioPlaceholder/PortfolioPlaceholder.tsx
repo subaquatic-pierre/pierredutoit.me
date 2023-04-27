@@ -4,7 +4,7 @@ import Skeleton from '@mui/material/Skeleton';
 import Grid from '@mui/material/Grid';
 import CardSkeleton from 'components/CardSkeleton';
 
-const mock = [1, 2, 3];
+const mock = [1, 2, 3, 4, 5, 6];
 
 const PortfolioPlaceholder = (): JSX.Element => {
   return (

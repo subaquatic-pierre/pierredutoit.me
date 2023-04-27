@@ -1,5 +1,9 @@
 import type { GatsbyConfig } from 'gatsby';
 
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`
+});
+
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `Zero Is One Dot IO`,
@@ -15,21 +19,21 @@ const config: GatsbyConfig = {
     // 'gatsby-plugin-google-gtag',
     'gatsby-plugin-image',
     'gatsby-plugin-sitemap',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
         icon: 'src/assets/Icon.png'
       }
     },
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'images',
-        path: './src/images/'
+        name: 'assets',
+        path: './src/assets/'
       },
-      __key: 'images'
+      __key: 'assets'
     }
   ]
 };

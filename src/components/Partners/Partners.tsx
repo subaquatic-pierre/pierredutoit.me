@@ -27,7 +27,7 @@ const mock = [
   gatsby,
   github,
   graphql,
-  node,
+  node
 ];
 
 const Partners = (): JSX.Element => {
@@ -39,22 +39,22 @@ const Partners = (): JSX.Element => {
       {mock.map((item, i) => (
         <Box
           maxWidth={{ xs: 40, sm: 50 }}
-          marginTop={{ xs: 1 }}
-          marginRight={{ xs: 3, sm: 6, md: 12 }}
+          mb={{ xs: 2 }}
+          mx={{ xs: 3, md: 6 }}
           key={i}
         >
           <Box
             component="img"
-            height={1}
-            width={1}
+            height={50}
+            width={50}
             src={item}
             alt="..."
             sx={{
-              filter:
-                mode === 'light'
-                  ? 'grayscale(100%)'
-                  : 'grayscale(100%) invert(100%)',
-              opacity: '0.7',
+              // filter:
+              // mode === 'light'
+              //   ? 'grayscale(100%)'
+              //   : 'grayscale(100%) invert(100%)',
+              opacity: '0.7'
             }}
           />
         </Box>

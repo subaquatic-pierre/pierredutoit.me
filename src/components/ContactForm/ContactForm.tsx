@@ -8,9 +8,10 @@ import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 
-import { contactUrl } from 'const';
-import { handleSendEmail } from 'utils';
+import { handleSendEmail } from 'utils/handleEmail';
 import { navigate } from 'gatsby';
+
+const contactUrl = process.env.CONTACT_URL;
 
 const validationSchema = yup.object({
   name: yup
@@ -93,7 +94,7 @@ const Contact = (): JSX.Element => {
                 value={formik.values.name}
                 onChange={formik.handleChange}
                 error={formik.touched.name && Boolean(formik.errors.name)}
-                helperText={formik.touched.name && formik.errors.name}
+                helperText={formik.touched.name && (formik.errors.name as any)}
               />
             </Grid>
 
@@ -110,7 +111,9 @@ const Contact = (): JSX.Element => {
                 value={formik.values.email}
                 onChange={formik.handleChange}
                 error={formik.touched.email && Boolean(formik.errors.email)}
-                helperText={formik.touched.email && formik.errors.email}
+                helperText={
+                  formik.touched.email && (formik.errors.email as any)
+                }
               />
             </Grid>
             <Grid item xs={12}>
@@ -126,7 +129,9 @@ const Contact = (): JSX.Element => {
                 value={formik.values.message}
                 onChange={formik.handleChange}
                 error={formik.touched.message && Boolean(formik.errors.message)}
-                helperText={formik.touched.message && formik.errors.message}
+                helperText={
+                  formik.touched.message && (formik.errors.message as any)
+                }
               />
             </Grid>
             <Grid item container justifyContent={'center'} xs={12}>
