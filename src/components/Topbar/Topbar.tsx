@@ -64,7 +64,9 @@ const Topbar = ({
         {main.map((item, index) => (
           <NavItem item={item} key={index} />
         ))}
-        <Box marginLeft={4}>{/* <ThemeModeToggler /> */}</Box>
+        <Box marginLeft={4}>
+          <ThemeModeToggler />
+        </Box>
       </Box>
       <Box sx={{ display: { xs: 'flex', md: 'none' } }} alignItems={'center'}>
         <Button

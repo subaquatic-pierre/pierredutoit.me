@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, createContext } from 'react';
 
 import { ThemeProvider } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
@@ -15,7 +15,24 @@ import pages from './navigation';
 import Page from './Page';
 
 import useDarkMode from '../hooks/useDarkMode';
+
+import { ThemeMode, ToggleThemeContactReturn } from '../hooks/useDarkMode';
+
+export const ThemeToggleContext = createContext<ToggleThemeContactReturn>({
+  themeMode: 'dark',
+  themeToggler: () => {}
+});
+
 const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
+  const localTheme = window.localStorage.getItem('themeMode') as ThemeMode;
+  const [themeMode, setTheme] = useState<ThemeMode>(
+    localTheme ? localTheme : 'dark'
+  );
+
+  const themeToggler = () => {
+    setTheme((old) => (old === 'dark' ? 'light' : 'dark'));
+  };
+
   React.useEffect(() => {
     // Remove the server-side injected CSS.
     const jssStyles = document.querySelector('#jss-server-side');
@@ -29,21 +46,24 @@ const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
       duration: 500,
       easing: 'ease-in-out'
     });
-  }, []);
 
-  const { themeMode, mountedComponent } = useDarkMode();
+    const localTheme = window.localStorage.getItem('themeMode');
+    if (localTheme) setTheme(localTheme as ThemeMode);
+  }, []);
 
   useEffect(() => {
     AOS.refresh();
 
-    console.log({ themeMode });
-  }, [mountedComponent, themeMode]);
+    window.localStorage.setItem('themeMode', themeMode);
+  }, [themeMode]);
 
   return (
     <ThemeProvider theme={getTheme(themeMode)}>
-      {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-      <CssBaseline />
-      <Page>{children}</Page>
+      <ThemeToggleContext.Provider value={{ themeMode, themeToggler }}>
+        {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+        <CssBaseline />
+        <Page>{children}</Page>
+      </ThemeToggleContext.Provider>
     </ThemeProvider>
   );
 };
