@@ -24,10 +24,12 @@ export const ThemeToggleContext = createContext<ToggleThemeContactReturn>({
 });
 
 const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
-  const localTheme = window.localStorage.getItem('themeMode') as ThemeMode;
-  const [themeMode, setTheme] = useState<ThemeMode>(
-    localTheme ? localTheme : 'dark'
-  );
+  let localTheme: ThemeMode = 'dark';
+
+  if (window) {
+    localTheme = window.localStorage.getItem('themeMode') as ThemeMode;
+  }
+  const [themeMode, setTheme] = useState<ThemeMode>(localTheme);
 
   const themeToggler = () => {
     setTheme((old) => (old === 'dark' ? 'light' : 'dark'));
