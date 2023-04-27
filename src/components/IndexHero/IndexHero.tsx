@@ -1,6 +1,5 @@
 import React from 'react';
 import Typed from 'react-typed';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
@@ -14,7 +13,7 @@ import launch from 'assets/Launch.svg';
 const IndexHero = (): JSX.Element => {
   const theme = useTheme();
   const isMd = useMediaQuery(theme.breakpoints.up('md'), {
-    defaultMatches: true,
+    defaultMatches: true
   });
 
   return (
@@ -22,10 +21,10 @@ const IndexHero = (): JSX.Element => {
       sx={{
         backgroundImage: `linear-gradient(to bottom, ${alpha(
           theme.palette.background.paper,
-          0,
-        )}, ${alpha(theme.palette.alternate.main, 1)} 100%)`,
+          0
+        )}, ${alpha(theme.palette.primary.main, 1)} 100%)`,
         backgroundRepeat: 'repeat-x',
-        position: 'relative',
+        position: 'relative'
       }}
     >
       <Box paddingY={{ xs: 0, sm: '4rem', md: '8rem' }}>
@@ -37,7 +36,7 @@ const IndexHero = (): JSX.Element => {
               gutterBottom
               sx={{
                 fontWeight: 700,
-                minHeight: 250,
+                minHeight: 250
               }}
             >
               Hey there! 👋
@@ -51,15 +50,15 @@ const IndexHero = (): JSX.Element => {
                 sx={{
                   background: `linear-gradient(180deg, transparent 82%, ${alpha(
                     theme.palette.secondary.main,
-                    0.3,
-                  )} 0%)`,
+                    0.3
+                  )} 0%)`
                 }}
               >
                 <Typed
                   strings={[
                     'software engineer',
                     'cloud architect',
-                    'blockchain developer',
+                    'blockchain developer'
                   ]}
                   typeSpeed={80}
                   loop={true}
@@ -117,7 +116,7 @@ const IndexHero = (): JSX.Element => {
                   component={'a'}
                   href={'/contact'}
                   variant="outlined"
-                  color="primary"
+                  color="secondary"
                   size="large"
                   fullWidth={isMd ? false : true}
                 >
@@ -129,7 +128,7 @@ const IndexHero = (): JSX.Element => {
         </Container>
         <Box
           sx={{
-            display: { xs: 'none', sm: 'block' },
+            display: { xs: 'none', sm: 'block' }
           }}
         >
           <Box display={'flex'} left={'54%'} top={100} position={'absolute'}>
@@ -146,7 +145,7 @@ const IndexHero = (): JSX.Element => {
         viewBox="0 0 1920 100.1"
         sx={{
           width: '100%',
-          marginBottom: theme.spacing(-1),
+          marginBottom: theme.spacing(-1)
         }}
       >
         <path

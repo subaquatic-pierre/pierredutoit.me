@@ -2,9 +2,11 @@ import React from 'react';
 import Button from '@mui/material/Button';
 import { alpha, useTheme } from '@mui/material/styles';
 
+import useDarkMode from 'hooks/useDarkMode';
+
 const ThemeModeToggler = (): JSX.Element => {
   const theme = useTheme();
-  const { themeToggler } = theme;
+  const { themeToggler } = useDarkMode();
   const { mode } = theme.palette;
 
   return (
@@ -17,7 +19,7 @@ const ThemeModeToggler = (): JSX.Element => {
         borderRadius: 2,
         minWidth: 'auto',
         padding: 0.5,
-        borderColor: alpha(theme.palette.divider, 0.2),
+        borderColor: alpha(theme.palette.divider, 0.2)
       }}
     >
       {mode === 'light' ? (

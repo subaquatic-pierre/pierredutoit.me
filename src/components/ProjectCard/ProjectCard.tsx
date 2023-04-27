@@ -12,6 +12,7 @@ import Skeleton from '@mui/material/Skeleton';
 
 import ProjectImage from 'components/ProjectImage';
 import ProjectCardFooter from 'components/ProjectCardFooter';
+
 import CardSkeleton from 'components/CardSkeleton';
 
 import projectPlaceholderImg from 'assets/project-placeholder.jpg';
@@ -29,7 +30,7 @@ const blankProject: Project = {
   youtube: '',
   stars: 0,
   forks: 0,
-  tags: [],
+  tags: []
 };
 
 interface Props {
@@ -64,7 +65,7 @@ const ProjectCard = ({ projectMeta }: Props): JSX.Element => {
 
   const fetchProjectData = async () => {
     const response = await octokit.request(
-      `GET /repos/${githubUsername}/${projectMeta.title}`,
+      `GET /repos/${githubUsername}/${projectMeta.title}`
     );
 
     const image = await getProjectImage();
@@ -80,7 +81,7 @@ const ProjectCard = ({ projectMeta }: Props): JSX.Element => {
         youtube: projectMeta.youtube,
         stars: data.stargazers_count,
         forks: data.forks,
-        tags: data.topics,
+        tags: data.topics
       };
       setProject(project);
     } catch (e) {
@@ -112,8 +113,8 @@ const ProjectCard = ({ projectMeta }: Props): JSX.Element => {
           textDecoration: 'none',
           transition: 'all .2s ease-in-out',
           '&:hover': {
-            transform: `translateY(-${theme.spacing(1 / 2)})`,
-          },
+            transform: `translateY(-${theme.spacing(1 / 2)})`
+          }
         }}
       >
         <Box

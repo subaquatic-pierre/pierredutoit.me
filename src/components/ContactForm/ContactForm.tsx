@@ -10,7 +10,7 @@ import Button from '@mui/material/Button';
 
 import { contactUrl } from 'const';
 import { handleSendEmail } from 'utils';
-import { useNavigate } from 'react-router-dom';
+import { navigate } from 'gatsby';
 
 const validationSchema = yup.object({
   name: yup
@@ -24,15 +24,15 @@ const validationSchema = yup.object({
     .trim()
     .email('Please enter a valid email address')
     .required('Email is required.'),
-  message: yup.string().trim().required('Please specify your message'),
+  message: yup.string().trim().required('Please specify your message')
 });
 
 const Contact = (): JSX.Element => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const initialValues = {
     name: '',
     email: '',
-    message: '',
+    message: ''
   };
 
   const onSubmit = (values) => {
@@ -41,16 +41,16 @@ const Contact = (): JSX.Element => {
         navigate('/', {
           state: {
             messages: [
-              'Thank you for your contact request, I will get back to you ASAP!',
-            ],
-          },
+              'Thank you for your contact request, I will get back to you ASAP!'
+            ]
+          }
         });
       })
       .catch((err) => {
         navigate('/contact', {
           state: {
-            messages: ['There was an error!'],
-          },
+            messages: ['There was an error!']
+          }
         });
       });
   };
@@ -58,7 +58,7 @@ const Contact = (): JSX.Element => {
   const formik = useFormik({
     initialValues,
     validationSchema: validationSchema,
-    onSubmit,
+    onSubmit
   });
 
   return (

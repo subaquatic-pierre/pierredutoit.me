@@ -48,7 +48,7 @@ const SidebarNav = ({ pages }: Props): JSX.Element => {
               href={item.href}
               sx={{
                 textTransform: 'uppercase',
-                color: 'text.primary',
+                color: 'text.primary'
               }}
             >
               {item.title}

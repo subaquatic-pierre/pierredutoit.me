@@ -1,18 +1,25 @@
 import React from 'react';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
-import { useTheme } from '@mui/material/styles';
-import useMediaQuery from '@mui/material/useMediaQuery';
+import type { HeadFC, PageProps } from 'gatsby';
+import { alpha, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 
-import Main from 'layouts/Main';
-import Container from 'components/Container';
+import useMediaQuery from '@mui/material/useMediaQuery';
+
+import Layout from '../layout/Layout';
 import ContactForm from 'components/ContactForm';
+import GetStarted from 'components/GetStarted';
+import Container from 'components/Container';
+import Features from 'components/Features';
+import Solutions from 'components/Solutions';
+import Benefits from 'components/Benefits';
+import IndexHero from 'components/IndexHero';
+
 import contactImage from 'assets/contact-image.jpg';
 
-const ContactPageCover = (): JSX.Element => {
+const ContactPage: React.FC<PageProps> = () => {
   const theme = useTheme();
   const isMd = useMediaQuery(theme.breakpoints.up('md'), {
-    defaultMatches: true,
+    defaultMatches: true
   });
 
   const Sidebar = () => (
@@ -31,30 +38,30 @@ const ContactPageCover = (): JSX.Element => {
         sx={{
           '& .lazy-load-image-loaded': {
             height: 1,
-            width: 1,
-          },
+            width: 1
+          }
         }}
       >
         <Box
-          component={LazyLoadImage}
+          component="img"
           height={1}
           width={1}
           src={contactImage}
           alt="..."
-          effect="blur"
           sx={{
             objectFit: 'cover',
             alignRight: 0,
             '& .lazy-load-image-loaded': {
-              height: 1,
-            },
+              height: 1
+            }
           }}
         />
       </Box>
     </Box>
   );
+
   return (
-    <Main>
+    <Layout>
       <Box
         position={'relative'}
         minHeight={'100vh'}
@@ -74,8 +81,10 @@ const ContactPageCover = (): JSX.Element => {
           </Box>
         </Box>
       </Box>
-    </Main>
+    </Layout>
   );
 };
 
-export default ContactPageCover;
+export default ContactPage;
+
+export const Head: HeadFC = () => <title>Contact | ZeroIsOne Dot IO</title>;

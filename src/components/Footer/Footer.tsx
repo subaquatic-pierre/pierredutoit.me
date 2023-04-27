@@ -35,7 +35,7 @@ const Footer = (): JSX.Element => {
               component={'img'}
               src={logo}
               sx={{
-                filter: mode === 'dark' && 'invert(100%)',
+                filter: mode === 'dark' && 'invert(100%)'
               }}
               height={1}
               width={1}

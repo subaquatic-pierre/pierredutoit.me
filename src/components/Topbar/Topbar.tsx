@@ -21,15 +21,11 @@ interface Props {
 const Topbar = ({
   onSidebarOpen,
   pages,
-  colorInvert = false,
+  colorInvert = false
 }: Props): JSX.Element => {
   const theme = useTheme();
   const { mode } = theme.palette;
   const { main } = pages;
-
-  useEffect(() => {
-    console.log({ themeMode: mode });
-  }, [mode]);
 
   return (
     <Box
@@ -50,7 +46,7 @@ const Topbar = ({
           component={'img'}
           src={logo}
           sx={{
-            filter: mode === 'dark' && 'invert(100%)',
+            filter: mode === 'dark' && 'invert(100%)'
           }}
           height={1}
           width={1}
@@ -60,17 +56,15 @@ const Topbar = ({
         sx={{
           display: {
             xs: 'none',
-            md: 'flex',
-          },
+            md: 'flex'
+          }
         }}
         alignItems={'center'}
       >
         {main.map((item, index) => (
           <NavItem item={item} key={index} />
         ))}
-        <Box marginLeft={4}>
-          <ThemeModeToggler />
-        </Box>
+        <Box marginLeft={4}>{/* <ThemeModeToggler /> */}</Box>
       </Box>
       <Box sx={{ display: { xs: 'flex', md: 'none' } }} alignItems={'center'}>
         <Button
@@ -81,7 +75,7 @@ const Topbar = ({
             borderRadius: 2,
             minWidth: 'auto',
             padding: 1,
-            borderColor: alpha(theme.palette.divider, 0.2),
+            borderColor: alpha(theme.palette.divider, 0.2)
           }}
         >
           <MenuIcon />

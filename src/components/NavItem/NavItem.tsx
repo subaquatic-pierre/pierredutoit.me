@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { useLocation } from 'react-router-dom';
+import { useLocation } from '@reach/router';
 import { useTheme } from '@mui/material/styles';
 
 import Box from '@mui/material/Box';
@@ -33,16 +33,16 @@ const NavItem = ({ item }: Props) => {
             backgroundColor: mode === 'light' ? 'GrayText' : 'white',
             bottom: -5,
             left: 0,
-            transform: path.pathname !== item.href && 'scaleX(0)',
+            transform: path.pathname !== item.href ? 'scaleX(0)' : '',
             transformOrigin: 'bottom right',
-            borderRadius: '2px',
+            borderRadius: '2px'
           },
           '&:hover::after': {
             transform: 'scaleX(1)',
             transition: 'transform 0.25s linear',
-            transformOrigin: 'bottom left',
-          },
-        },
+            transformOrigin: 'bottom left'
+          }
+        }
       }}
     >
       <Typography
@@ -52,7 +52,7 @@ const NavItem = ({ item }: Props) => {
         variant="h6"
         sx={{
           position: 'relative',
-          fontWeight: path.pathname === item.href && 600,
+          fontWeight: path.pathname === item.href ? 600 : 400
         }}
       >
         {item.title}

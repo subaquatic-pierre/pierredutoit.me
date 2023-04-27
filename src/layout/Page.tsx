@@ -14,20 +14,19 @@ import Footer from 'components/Footer';
 
 import pages from './navigation';
 
-interface Props {
-  children: React.ReactNode;
+interface Props extends React.PropsWithChildren {
   colorInvert?: boolean;
   bgcolor?: string;
 }
 
-const Main = ({
+const Page: React.FC<Props> = ({
   children,
   colorInvert = false,
-  bgcolor = 'transparent',
-}: Props): JSX.Element => {
+  bgcolor = 'transparent'
+}) => {
   const theme = useTheme();
   const isMd = useMediaQuery(theme.breakpoints.up('md'), {
-    defaultMatches: true,
+    defaultMatches: true
   });
 
   const [openSidebar, setOpenSidebar] = useState(false);
@@ -44,16 +43,16 @@ const Main = ({
 
   const trigger = useScrollTrigger({
     disableHysteresis: true,
-    threshold: 38,
+    threshold: 38
   });
 
   return (
-    <Box>
+    <>
       <AppBar
         position="sticky"
         sx={{
           top: 0,
-          backgroundColor: trigger ? theme.palette.background.paper : bgcolor,
+          backgroundColor: trigger ? theme.palette.background.paper : bgcolor
         }}
         elevation={trigger ? 1 : 0}
       >
@@ -78,8 +77,8 @@ const Main = ({
       <Container paddingY={4}>
         <Footer />
       </Container>
-    </Box>
+    </>
   );
 };
 
-export default Main;
+export default Page;

@@ -1,25 +1,25 @@
 import React from 'react';
 import { useTheme } from '@mui/material/styles';
-import Link from '@mui/material/Link';
+import { Link, HeadFC, PageProps } from 'gatsby';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 
-import Main from 'layouts/Main';
+import Layout from 'layout';
 import Container from 'components/Container';
 
-const NotFound = (): JSX.Element => {
+const NotFoundPage: React.FC<PageProps> = () => {
   const theme = useTheme();
   const isMd = useMediaQuery(theme.breakpoints.up('md'), {
-    defaultMatches: true,
+    defaultMatches: true
   });
 
   return (
-    <Main>
+    <Layout>
       <Box
-        bgcolor={theme.palette.alternate.main}
+        // bgcolor={theme.palette.primary.main}
         position={'relative'}
         minHeight={'calc(100vh - 247px)'}
         display={'flex'}
@@ -57,9 +57,7 @@ const NotFound = (): JSX.Element => {
                   Oops! Looks like you followed a bad link.
                   <br />
                   If you think this is a problem with us, please{' '}
-                  <Link href={''} underline="none">
-                    tell us
-                  </Link>
+                  <Link to={'/contact'}>tell us</Link>
                 </Typography>
                 <Box
                   marginTop={4}
@@ -71,7 +69,7 @@ const NotFound = (): JSX.Element => {
                     variant="contained"
                     color="primary"
                     size="large"
-                    href={'/'}
+                    to={'/'}
                   >
                     Back home
                   </Button>
@@ -89,9 +87,7 @@ const NotFound = (): JSX.Element => {
                   height={1}
                   sx={{
                     filter:
-                      theme.palette.mode === 'dark'
-                        ? 'brightness(0.8)'
-                        : 'none',
+                      theme.palette.mode === 'dark' ? 'brightness(0.8)' : 'none'
                   }}
                 />
               </Box>
@@ -99,8 +95,10 @@ const NotFound = (): JSX.Element => {
           </Grid>
         </Container>
       </Box>
-    </Main>
+    </Layout>
   );
 };
 
-export default NotFound;
+export default NotFoundPage;
+
+export const Head: HeadFC = () => <title>Not found</title>;
