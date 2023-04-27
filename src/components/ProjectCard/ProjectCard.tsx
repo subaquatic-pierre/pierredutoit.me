@@ -18,7 +18,7 @@ import projectPlaceholderImg from 'assets/project-placeholder.jpg';
 
 import { githubUsername } from 'const';
 
-const githubToken = process.env.REACT_APP_FOO;
+const githubToken = process.env.REACT_APP_GIT_AUTH_TOKEN;
 
 const blankProject: Project = {
   title: '',

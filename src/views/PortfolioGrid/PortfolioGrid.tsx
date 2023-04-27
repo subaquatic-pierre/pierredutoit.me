@@ -11,7 +11,7 @@ import Partners from 'components/Partners';
 import PortfolioPlaceholder from 'components/PortfolioPlaceholder';
 
 import { githubUsername } from 'const';
-const githubToken = process.env.REACT_APP_FOO;
+const githubToken = process.env.REACT_APP_GIT_AUTH_TOKEN;
 
 const PortfolioGrid = (): JSX.Element => {
   const [allProjects, setAllProjects] = React.useState<ProjectMetaData[]>([]);
