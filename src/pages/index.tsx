@@ -63,4 +63,4 @@ const IndexPage: React.FC<PageProps> = () => {
 
 export default IndexPage;
 
-export const Head: HeadFC = () => <title>Home | ZeroIsOne Dot IO</title>;
+export const Head: HeadFC = () => <title>ZeroIsOne Dot IO</title>;
