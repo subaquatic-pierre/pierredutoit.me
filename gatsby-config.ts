@@ -2,8 +2,8 @@ import type { GatsbyConfig } from 'gatsby';
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `template`,
-    siteUrl: `https://www.yourdomain.tld`
+    title: `Zero Is One Dot IO`,
+    siteUrl: `zeroisone.io`
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
@@ -18,7 +18,7 @@ const config: GatsbyConfig = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: 'src/images/icon.png'
+        icon: 'src/assets/Icon.png'
       }
     },
     'gatsby-plugin-sharp',
