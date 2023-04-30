@@ -1,8 +1,6 @@
 import React from 'react';
 import type { HeadFC, PageProps } from 'gatsby';
 
-import { Octokit } from '@octokit/core';
-
 import Layout from 'layout';
 
 import Container from 'components/Container';
@@ -11,15 +9,12 @@ import PortfolioMain from 'components/PortfolioMain';
 
 import Partners from 'components/Partners';
 import PortfolioPlaceholder from 'components/PortfolioPlaceholder';
-
-const githubUsername = process.env.GITHUB_USERNAME;
-const githubToken = process.env.GIT_AUTH_TOKEN;
+import useOctokit from 'hooks/useOctokit';
 
 const ProjectPage: React.FC<PageProps> = () => {
+  const { octokit, githubUsername } = useOctokit();
   const [allProjects, setAllProjects] = React.useState<ProjectMetaData[]>([]);
   const [projectsLoaded, setProjectsLoaded] = React.useState(false);
-
-  const octokit = new Octokit({ auth: githubToken });
 
   const getProjects = async () => {
     const response = await octokit.request(
@@ -31,12 +26,26 @@ const ProjectPage: React.FC<PageProps> = () => {
     // Decode base64 string
     const encoded = atob(content);
     const projects = JSON.parse(encoded);
+
     setAllProjects(projects);
     setProjectsLoaded(true);
   };
 
+  const checkAuth = async () => {
+    const {
+      data: { login }
+    } = await octokit.rest.users.getAuthenticated();
+    console.log('Hello, %s', login);
+
+    const rate = await octokit.request(`GET /rate_limit`);
+
+    console.log(rate.data);
+  };
+
   React.useEffect(() => {
     getProjects();
+
+    // checkAuth();
   }, []);
 
   return (

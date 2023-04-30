@@ -21,6 +21,7 @@ const config: GatsbyConfig = {
     'gatsby-plugin-sitemap',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
+    'gatsby-transformer-remark',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -34,6 +35,14 @@ const config: GatsbyConfig = {
         path: './src/assets/'
       },
       __key: 'assets'
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'projects',
+        path: `./src/content/projects`
+      },
+      __key: 'projects'
     }
   ]
 };

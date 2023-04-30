@@ -1,20 +1,12 @@
 import React, { useEffect, useState, createContext } from 'react';
 
+import { Octokit } from 'octokit';
 import { ThemeProvider } from '@mui/material/styles';
-import Paper from '@mui/material/Paper';
 import CssBaseline from '@mui/material/CssBaseline';
 import getTheme from '../theme';
 import AOS from 'aos';
 
-import Sidebar from 'components/Sidebar';
-import Footer from 'components/Footer';
-import Topbar from 'components/Topbar';
-
-import pages from './navigation';
-
 import Page from './Page';
-
-import useDarkMode from '../hooks/useDarkMode';
 
 import { ThemeMode, ToggleThemeContactReturn } from '../hooks/useDarkMode';
 
@@ -22,6 +14,16 @@ export const ThemeToggleContext = createContext<ToggleThemeContactReturn>({
   themeMode: 'dark',
   themeToggler: () => {}
 });
+
+const githubUsername = process.env.GITHUB_USERNAME;
+const githubToken = process.env.GIT_AUTH_TOKEN;
+
+const octokit = new Octokit({ auth: githubToken });
+
+export const OctokitContext = createContext<{
+  octokit: Octokit;
+  githubUsername: string;
+}>({ octokit, githubUsername });
 
 const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
   let localTheme: ThemeMode = 'dark';
@@ -64,9 +66,11 @@ const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
   return (
     <ThemeProvider theme={getTheme(themeMode)}>
       <ThemeToggleContext.Provider value={{ themeMode, themeToggler }}>
-        {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-        <CssBaseline />
-        <Page>{children}</Page>
+        <OctokitContext.Provider value={{ octokit, githubUsername }}>
+          {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+          <CssBaseline />
+          <Page>{children}</Page>
+        </OctokitContext.Provider>
       </ThemeToggleContext.Provider>
     </ThemeProvider>
   );

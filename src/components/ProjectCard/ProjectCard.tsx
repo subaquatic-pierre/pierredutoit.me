@@ -16,6 +16,7 @@ import ProjectCardFooter from 'components/ProjectCardFooter';
 import CardSkeleton from 'components/CardSkeleton';
 
 import projectPlaceholderImg from 'assets/project-placeholder.jpg';
+import useOctokit from 'hooks/useOctokit';
 
 const githubUsername = process.env.GITHUB_USERNAME;
 const githubToken = process.env.REACT_APP_GIT_AUTH_TOKEN;
@@ -37,15 +38,15 @@ interface Props {
 }
 
 const ProjectCard = ({ projectMeta }: Props): JSX.Element => {
+  const { octokit, githubUsername } = useOctokit();
   const [project, setProject] = React.useState<Project>(blankProject);
   const [loading, setLoading] = React.useState(true);
   const [failed, setFailed] = React.useState(false);
 
-  const octokit = new Octokit({ auth: githubToken });
   const theme = useTheme();
 
   const getProjectImage = async (): Promise<string> => {
-    const screenshotUrl = `/repos/subaquatic-pierre/projects/contents/screenshots/${projectMeta.screenshot}`;
+    const screenshotUrl = `/repos/${githubUsername}/projects/contents/screenshots/${projectMeta.screenshot}`;
 
     if (!projectMeta.screenshot) {
       return projectPlaceholderImg;
