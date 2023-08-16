@@ -18,9 +18,6 @@ import CardSkeleton from 'components/CardSkeleton';
 import projectPlaceholderImg from 'assets/project-placeholder.jpg';
 import useOctokit from 'hooks/useOctokit';
 
-const githubUsername = process.env.GITHUB_USERNAME;
-const githubToken = process.env.REACT_APP_GIT_AUTH_TOKEN;
-
 const blankProject: Project = {
   title: '',
   description: '',

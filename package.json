@@ -21,6 +21,7 @@
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.12.2",
     "aos": "^2.3.4",
+    "deepmerge": "^4.3.1",
     "formik": "^2.2.9",
     "gatsby": "^5.9.0",
     "gatsby-plugin-emotion": "^8.9.0",
