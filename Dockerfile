@@ -14,6 +14,7 @@ ENV GATSBY_TELEMETRY_DISABLED=1
 RUN cd /app
 
 COPY --chown=node:node . .
+RUN . ./.env.production
 RUN npm run build
 
 FROM node:20-alpine
